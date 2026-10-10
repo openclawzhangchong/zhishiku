@@ -1,4 +1,4 @@
-# 03 · Git 与 GitHub 推送通道
+# 03 · Git 推送：本机 502 走 API 四步法
 
 > **摘要**：本机 `git push` 到 github.com 常年 502 / Connection reset，逼出一套"Git Data REST API 四步法"推送方案，也踩烂了 blob 编码、CRLF、树校验、stash 毁库等一堆坑。本篇是可直接照抄的推送脚本要点与事故清单。
 >

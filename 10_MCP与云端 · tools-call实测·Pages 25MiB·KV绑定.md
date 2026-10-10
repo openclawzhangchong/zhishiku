@@ -1,4 +1,4 @@
-# 10 · MCP 服务器、Cloudflare 与服务器运维
+# 10 · MCP 与云端部署：tools/call 实测 · Pages 25MiB · KV 绑定
 
 > **摘要**：MCP 接入有"协议通 / 清单通 / 业务通"三级，只验到第二级就会漏掉余额为 0、key 错误这类问题。本篇记录 MCP 配置与排查、自研 Worker 骨架、Cloudflare Pages/Workers/KV/D1 的绑定与部署坑，以及阿里云 Windows 服务器的端口与自启纪律。
 >

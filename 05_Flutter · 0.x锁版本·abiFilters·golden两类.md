@@ -1,4 +1,4 @@
-# 05 · Flutter 构建、依赖与测试
+# 05 · Flutter：0.x 锁版本 · abiFilters · golden 两类
 
 > **摘要**：本机没有完整 Android 构建能力（沙箱拦截 java/gradle），CI 是唯一真值；本地只能靠 analyze + test + golden。本篇记录依赖冲突、ABI 体积、codegen 连锁报错、golden 抖动定性、以及一批 Dart 语言与 Riverpod 状态坑。
 >
