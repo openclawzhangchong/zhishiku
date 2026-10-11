@@ -1,0 +1,10 @@
+# 临时文件（提交消息草稿等），不要提交
+_commitmsg.txt
+*.tmp
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
