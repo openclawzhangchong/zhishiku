@@ -4,7 +4,7 @@
 >
 > 不是原则，不是鸡汤。每一条背后都是一次真实事故、一次返工、一次交付。
 
-![文档数](https://img.shields.io/badge/文档-28%20篇-blue)
+![文档数](https://img.shields.io/badge/文档-29%20篇-blue)
 ![体量](https://img.shields.io/badge/体量-约%2016%20万字-brightgreen)
 ![来源项目](https://img.shields.io/badge/来源项目-47%20个-orange)
 ![批次](https://img.shields.io/badge/批次-2%20批-blueviolet)
