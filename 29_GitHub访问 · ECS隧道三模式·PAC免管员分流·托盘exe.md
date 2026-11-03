@@ -1,3 +1,13 @@
+---
+id: 29
+title: GitHub访问
+stack: ["git", "tunnel"]
+keywords: ["ECS隧道", "PAC分流", "托盘exe"]
+symptoms: ["push被墙", "打不开GitHub"]
+whenToRead: GitHub 被墙
+oneLiner: ECS SSH 中转三模式；上传必死下载偶通是上行干扰
+---
+
 # 29 · GitHub 访问：ECS 隧道三模式（git / 浏览器 / PAC 分流托盘 exe）
 
 > **摘要**：本机直连 github.com 时**下载偶通、上传必死**（`git push` 连续 10+ 次全灭：21 秒连接超时 / `send-pack: unexpected disconnect` 中途 RST）。改用阿里云 ECS 做 SSH 中转后，push / clone / 32MB Release 二进制上传**全部一把过**，且 ECS→GitHub 实测 0.27s。沉淀为独立工具仓库（forward / socks5 / 托盘 exe 三模式），本篇是原理、命令与踩坑全记录。

@@ -1,3 +1,13 @@
+---
+id: 5
+title: Flutter
+stack: ["flutter", "dart"]
+keywords: ["0.x版本", "abiFilters", "golden"]
+symptoms: ["Flutter编译不过", "依赖冲突", "golden diff"]
+whenToRead: Flutter 编译/依赖/golden 出错
+oneLiner: 0.x 依赖锁版本、加原生库先配 abiFilters、golden 分两类
+---
+
 # 05 · Flutter：0.x 锁版本 · abiFilters · golden 两类
 
 > **摘要**：本机没有完整 Android 构建能力（沙箱拦截 java/gradle），CI 是唯一真值；本地只能靠 analyze + test + golden。本篇记录依赖冲突、ABI 体积、codegen 连锁报错、golden 抖动定性、以及一批 Dart 语言与 Riverpod 状态坑。

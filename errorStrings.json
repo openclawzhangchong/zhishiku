@@ -1,0 +1,114 @@
+[
+  {
+    "pattern": "EBUSY",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "WinError 5",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "access denied",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "UAC.dll_unloaded",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "Failed to uninstall old application files",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "appCannotBeClosed",
+    "docs": [
+      30
+    ]
+  },
+  {
+    "pattern": "Connection was reset",
+    "docs": [
+      29,
+      3
+    ]
+  },
+  {
+    "pattern": "Failed to connect to github",
+    "docs": [
+      29,
+      3
+    ]
+  },
+  {
+    "pattern": "push timeout",
+    "docs": [
+      29,
+      3
+    ]
+  },
+  {
+    "pattern": "502",
+    "docs": [
+      3
+    ]
+  },
+  {
+    "pattern": "InvalidStateError",
+    "docs": [
+      32
+    ]
+  },
+  {
+    "pattern": "AudioContext suspended",
+    "docs": [
+      32
+    ]
+  },
+  {
+    "pattern": "playMusicEvent 无效",
+    "docs": [
+      31
+    ]
+  },
+  {
+    "pattern": "unauthorized",
+    "docs": [
+      31
+    ]
+  },
+  {
+    "pattern": "TOOLS_CALL",
+    "docs": [
+      10
+    ]
+  },
+  {
+    "pattern": "429",
+    "docs": [
+      10
+    ]
+  },
+  {
+    "pattern": "golden diff",
+    "docs": [
+      5,
+      11
+    ]
+  },
+  {
+    "pattern": "NameNotFoundException",
+    "docs": [
+      7
+    ]
+  }
+]

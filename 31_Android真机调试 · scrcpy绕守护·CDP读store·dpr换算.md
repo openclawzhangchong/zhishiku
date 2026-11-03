@@ -1,3 +1,13 @@
+---
+id: 31
+title: Android真机调试
+stack: ["android", "adb", "scrcpy", "cdp"]
+keywords: ["安全守护", "scrcpy", "CDP", "uiautomator", "dpr", "pinia"]
+symptoms: ["真机装不上卡风险页", "input tap无效", "想知道运行时状态"]
+whenToRead: 真机安装/真机调试前必读
+oneLiner: 首次安装必人工过风险页；scrcpy 可代点；CDP 读 store+getBoundingClientRect×dpr
+---
+
 # 31 · Android真机调试：scrcpy绕守护、CDP读store、dpr换算
 
 > **摘要**：Capacitor/WebView 应用真机调试的完整方法论，全部经 realme（Android 16）实战验证。三个核心手段：**scrcpy 投屏**（绕过 ColorOS「安全守护」对 `input tap` 的拦截，电脑上直接操作手机）；**WebView CDP**（比截图精准一个量级——可读 pinia store、可取任意元素 getBoundingClientRect 精确坐标）；**uiautomator dump**（拿物理坐标，避免"截图尺寸 ≠ 物理分辨率"的换算错误）。另含 6 种失败的安装方式记录与可用的 2 种。

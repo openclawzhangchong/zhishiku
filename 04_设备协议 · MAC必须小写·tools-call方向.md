@@ -1,3 +1,13 @@
+---
+id: 4
+title: 设备协议
+stack: ["mcp", "webrtc"]
+keywords: ["MAC小写", "tools-call", "WebSocket"]
+symptoms: ["连不上", "秒断", "无声", "零响应"]
+whenToRead: 连不上/秒断/无声/零响应
+oneLiner: 虚拟 MAC 必须全小写；MCP 的 tools/call 只能服务器→设备
+---
+
 # 04 · 设备协议对接：MAC 必须小写 · tools/call 方向 · listen mode
 
 > **摘要**：通信层的坑有一个共同特点——**失败是静默的**：连上就断没状态码、无声不报错、工具调用零响应。本篇记录"看似未激活/看似服务器问题"背后真实的标识符、方向、字段级原因，以及音频链路的完整必要条件。

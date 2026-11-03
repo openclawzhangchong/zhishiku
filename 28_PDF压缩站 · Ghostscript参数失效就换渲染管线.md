@@ -1,3 +1,13 @@
+---
+id: 28
+title: PDF压缩站
+stack: ["pdf", "ghostscript"]
+keywords: ["gs参数失效", "渲染管线", "pdf.js"]
+symptoms: ["PDF压缩/worker加载"]
+whenToRead: 浏览器端 PDF 处理
+oneLiner: gs 参数失效就换 pdf.js 渲染管线
+---
+
 # PDF 压缩站 · Ghostscript 参数失效就换渲染管线
 
 > **摘要**：2026-10-24 单日从零做出一个纯前端 PDF 批量压缩站（zcagent/智策张翀），部署 WorkBuddy 站点托管 + 开源到 GitHub。核心结论三条：①**别在本地反复起 server 测，直接上线 + 页内日志面板，看日志改代码**——这是用户明确纠正过的元教训，也是最省时间的方式；②**Ghostscript 10.08 WASM 的 `DownsampleColorImages`/`JPEGQ` 参数全部失效**（6 种写法输出恒定），照片型必须换 pdf.js 渲染重采样管线，文字型才用 gs 保文本层；③**worker 里的静态 `import` 失败是静默的**，必须全改动态 import + 哨兵消息，否则永远只看到「Worker 异常：未知」。全程踩了 20 个坑，其中 6 个是"看着像 A 其实是 B"。

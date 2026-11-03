@@ -1,3 +1,13 @@
+---
+id: 30
+title: Windows打包
+stack: ["electron", "electron-builder", "nsis"]
+keywords: ["build.files", "asar", "EBUSY", "WinError 5", "UAC.dll_unloaded", "无法关闭", "Failed to uninstall"]
+symptoms: ["装完双击没反应", "覆盖安装弹无法关闭", "安装包体积虚高", "asar缺入口"]
+whenToRead: 打包前/覆盖安装前必读
+oneLiner: build.files 必须白名单（.gitignore 会吃掉 out/）；事件日志的故障模块名会骗人；装到用户可写目录免提权
+---
+
 # 30 · Windows打包：build.files白名单、事件日志会骗人、安装器钩子
 
 > **摘要**：Electron 项目把 `build.files` 配成 `["**/*"]` 通配符，而 `.gitignore` 里恰好有 `out`——electron-builder **遵循 .gitignore**，编译产物 `out/main/index.js` 被整体排除在 asar 之外，装完双击无反应。Windows 事件日志报 `UAC.dll_unloaded` + `0xc000041d`，把排查引向 UAC/沙盒/ACL 三个方向全错，耗时半天；真正定位只花 10 分钟：`npx asar list ... | grep -c "out\\"` = **0**。本篇同时沉淀覆盖安装「无法关闭」「Failed to uninstall old application files: 2」两个弹窗的真实机制与排查工具箱。

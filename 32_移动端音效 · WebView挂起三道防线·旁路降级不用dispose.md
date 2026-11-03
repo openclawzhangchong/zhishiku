@@ -1,3 +1,13 @@
+---
+id: 32
+title: 移动端音效
+stack: ["android", "web-audio", "capacitor"]
+keywords: ["AudioContext挂起", "createMediaElementSource", "旁路降级", "双版本"]
+symptoms: ["移动端音效息屏失效", "降级方案设计"]
+whenToRead: 移动端 Web Audio 实现前必读
+oneLiner: AudioContext 会被挂起需三道自愈；降级=增益归零不用 dispose；音效默认关闭+双版本并存
+---
+
 # 32 · 移动端音效：WebView挂起三道防线、旁路降级不用dispose、双版本并存
 
 > **⚠️ 后续（2026-11-03）**：本篇方案真机验收通过，但用户实测一天后判定**开启音效音质大幅下降**（引擎级平台差异），已全面回滚——见 `33_Android音效撤回`。本篇保留：实现手法与三道防线设计仍有复用价值，但**上线前必须先做真机音质 A/B 对比**。

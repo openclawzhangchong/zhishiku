@@ -1,3 +1,13 @@
+---
+id: 16
+title: Cloudflare-D1
+stack: ["cloudflare", "d1"]
+keywords: ["默认值陷阱", "Worker非Node", "UTC"]
+symptoms: ["D1/绑定/部署问题"]
+whenToRead: 配 wrangler/D1/绑定
+oneLiner: === '1' 是默认关、!== '0' 是默认开；Worker 不是 Node
+---
+
 # 16 · Cloudflare + D1 后端：默认值陷阱 · Worker 非 Node · UTC
 
 > **摘要**：一个跑在 Cloudflare Pages Functions + D1 上的真实业务后端，踩过的坑集中在四件事：**配置表读写的默认值陷阱**、**迁移文件的记账与行尾**、**绑定的开启方式与本地开发的费用陷阱**、**Worker 运行环境的差异（没有 Buffer、跑在 UTC）**。本文同时给出「一次性测试站」这套验证方法——用一个独立临时项目把不确定的技术点先跑通，再动主工程，这是本项目节省时间最多的一条经验。

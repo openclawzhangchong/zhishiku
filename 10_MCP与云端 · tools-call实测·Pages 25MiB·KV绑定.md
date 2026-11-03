@@ -1,3 +1,13 @@
+---
+id: 10
+title: MCP与云端
+stack: ["mcp", "cloudflare", "pages"]
+keywords: ["tools-call", "25MiB", "KV绑定", "Worker"]
+symptoms: ["MCP工具调不通", "部署失败", "429"]
+whenToRead: 配 MCP/部署 Worker/Pages
+oneLiner: tools/list 通过只是协议通，必须再打一次 tools/call
+---
+
 # 10 · MCP 与云端部署：tools/call 实测 · Pages 25MiB · KV 绑定
 
 > **摘要**：MCP 接入有"协议通 / 清单通 / 业务通"三级，只验到第二级就会漏掉余额为 0、key 错误这类问题。本篇记录 MCP 配置与排查、自研 Worker 骨架、Cloudflare Pages/Workers/KV/D1 的绑定与部署坑，以及阿里云 Windows 服务器的端口与自启纪律。

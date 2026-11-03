@@ -1,3 +1,13 @@
+---
+id: 25
+title: Windows静默后台任务
+stack: ["windows", "background"]
+keywords: ["闪屏", "编码方向", "日志策略"]
+symptoms: ["后台任务闪屏/日志乱"]
+whenToRead: Windows 后台任务
+oneLiner: 闪屏、编码方向、日志策略三件套
+---
+
 # 25 · Windows 静默后台任务：闪屏 · 编码方向 · 日志策略
 
 > **摘要**：做一个 Windows「移动热点保活」工具（任务计划程序定时唤起 PowerShell 脚本），发 v1.0.0 后**跑了一天才暴露问题**——**屏幕每隔 5 分钟闪一下黑框**，同时日志一天涨了 288 行。排查后确认闪屏不是脚本 bug，而是**计划任务直接调 `powershell.exe` 的机制必然结果**：控制台程序在进程启动的最初几毫秒会创建控制台窗口，`-WindowStyle Hidden` 挡不住。修复方案是加一层 **VBScript 静默启动器**（`WScript.Shell.Run(cmd, 0, True)`）。过程中还踩到一组**方向相反的编码规则**（`.ps1` 要 UTF-8 BOM，`.vbs` 要 GB2312），以及"临时脚本不带 BOM 导致误判文件不存在"的坑。

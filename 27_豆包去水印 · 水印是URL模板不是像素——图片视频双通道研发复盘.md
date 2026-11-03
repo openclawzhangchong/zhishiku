@@ -1,3 +1,13 @@
+---
+id: 27
+title: 豆包去水印
+stack: ["media", "watermark"]
+keywords: ["URL模板", "双通道"]
+symptoms: ["去水印下载失败"]
+whenToRead: 媒体水印处理
+oneLiner: 水印是 URL 模板不是像素——图片视频双通道
+---
+
 # 27 · 豆包去水印 · 水印是URL模板不是像素——图片视频双通道研发复盘
 
 > **摘要**：豆包 AI 生成内容的"豆包AI生成"水印，图片是 ImageX CDN 按 URL 模板动态加的（接口里就有 `image_ori_raw` 无水印直链），视频是服务端渲染了两份文件（URL 参数 `lr=unwatermarked` 自报版本）。本文完整复盘一个 Chrome MV3 扩展从 0 到"图片+视频双通道无水印下载稳定版"的研发全程：机制发现、9 个踩坑（bind 参数顺序 / DOM 过滤误伤 / Content-Disposition 覆盖文件名 / 扩展更新后旧脚本失效误报 / CDN 路径 token 正则错位 / 水印版无水印版是不同文件 ID 的竞态等）、7 个成功设计（三级火箭架构 / 用户操作+AI直读日志闭环 / 版本锚点铁律等）、迭代工作流铁律与关键速查表。
