@@ -4,10 +4,10 @@
 >
 > 不是原则，不是鸡汤。每一条背后都是一次真实事故、一次返工、一次交付。
 
-![文档数](https://img.shields.io/badge/文档-29%20篇-blue)
+![文档数](https://img.shields.io/badge/文档-33%20篇-blue)
 ![体量](https://img.shields.io/badge/体量-约%2016%20万字-brightgreen)
 ![来源项目](https://img.shields.io/badge/来源项目-47%20个-orange)
-![批次](https://img.shields.io/badge/批次-2%20批-blueviolet)
+![批次](https://img.shields.io/badge/批次-6%20批-blueviolet)
 ![协议](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
@@ -78,6 +78,23 @@
 | 27 | [`27_豆包去水印 · 水印是URL模板不是像素——图片视频双通道研发复盘.md`](27_%E8%B1%86%E5%8C%85%E5%8E%BB%E6%B0%B4%E5%8D%B0%20%C2%B7%20%E6%B0%B4%E5%8D%B0%E6%98%AFURL%E6%A8%A1%E6%9D%BF%E4%B8%8D%E6%98%AF%E5%83%8F%E7%B4%A0%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E5%8F%8C%E9%80%9A%E9%81%93%E7%A0%94%E5%8F%91%E5%A4%8D%E7%9B%98.md) | 做浏览器扩展拦截接口、下载 CDN 加水印资源 | 图片水印是 CDN URL 模板(接口 `image_ori_raw`)、视频看 `lr=unwatermarked` |
 | 28 | [`28_PDF压缩站 · Ghostscript参数失效就换渲染管线.md`](28_PDF%E5%8E%8B%E7%BC%A9%E7%AB%99%20%C2%B7%20Ghostscript%E5%8F%82%E6%95%B0%E5%A4%B1%E6%95%88%E5%B0%B1%E6%8D%A2%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF.md) | 做浏览器端 PDF 处理、worker 里加载 wasm/ESM、静态托管跑旧码、agent-browser 挂了 | 别本地起 server 反复测;gs 10.08 参数全失效改渲染重采样;worker 静态 import 失败是静默的 |
 
+### 第五批（29）
+
+| # | 文件 | 什么时候读它 | 核心一句话 |
+|---|---|---|---|
+| 29 | [`29_GitHub访问 · ECS隧道三模式·PAC免管员分流·托盘exe.md`](29_GitHub%E8%AE%BF%E9%97%AE%20%C2%B7%20ECS%E9%9A%A7%E9%81%93%E4%B8%89%E6%A8%A1%E5%BC%8F%C2%B7PAC%E5%85%8D%E7%AE%A1%E7%90%86%E5%91%98%E5%88%86%E6%B5%81%C2%B7%E6%89%98%E7%9B%98exe.md) | git push 超时/RST、浏览器打不开 GitHub、要做"只代理特定网站"的托盘工具 | 上传必死下载偶通是上行干扰；ECS SSH 中转三模式；gist 从阿里云路由不通属环境限制 |
+
+### 第六批 · ZCMusic（30–33）
+
+> 来源：`E:\github项目lgermusicplayer`（Electron+Vue3 音乐播放器 + Android Capacitor 壳，2026-11-01~03 音效系统两日攻坚 + 全面回滚）。
+
+| # | 文件 | 什么时候读它 | 核心一句话 |
+|---|---|---|---|
+| 30 | [`30_Windows打包 · build.files白名单·事件日志会骗人·安装器钩子.md`](30_Windows%E6%89%93%E5%8C%85%20%C2%B7%20build.files%E7%99%BD%E5%90%8D%E5%8D%95%C2%B7%E4%BA%8B%E4%BB%B6%E6%97%A5%E5%BF%97%E4%BC%9A%E9%AA%97%E4%BA%BA%C2%B7%E5%AE%89%E8%A3%85%E5%99%A8%E9%92%A9%E5%AD%90.md) | 装完双击没反应、覆盖安装弹「无法关闭/卸载失败」、打包体积虚高 | build.files 必须白名单（.gitignore 会吃掉 out/）；事件日志的故障模块名会骗人；装到用户可写目录免提权 |
+| 31 | [`31_Android真机调试 · scrcpy绕守护·CDP读store·dpr换算.md`](31_Android%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%20%C2%B7%20scrcpy%E7%BB%95%E5%AE%88%E6%8A%A4%C2%B7CDP%E8%AF%BBstore%C2%B7dpr%E6%8D%A2%E7%AE%97.md) | 真机装不上（安全守护风险页）、tap 点不中、想知道运行时状态 | 首次安装必人工过风险页；scrcpy 投屏可代点；CDP 读 pinia store + getBoundingClientRect×dpr |
+| 32 | [`32_移动端音效 · WebView挂起三道防线·旁路降级不用dispose.md`](32_%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%9F%B3%E6%95%88%20%C2%B7%20WebView%E6%8C%82%E8%B5%B7%E4%B8%89%E9%81%93%E9%98%B2%E7%BA%BF%C2%B7%E6%97%81%E8%B7%AF%E9%99%8D%E7%BA%A7%E4%B8%8D%E7%94%A8dispose.md) | 把 Web Audio 搬进 Android WebView、音效息屏失效、降级方案设计 | AudioContext 会被挂起需三道自愈；createMediaElementSource 只能调一次，降级=增益归零不用 dispose；音效默认关闭+双版本并存 |
+| 33 | [`33_Android音效撤回 · 引擎级差异·真机音质A/B·覆盖式回滚.md`](33_Android%E9%9F%B3%E6%95%88%E6%92%A4%E5%9B%9E%20%C2%B7%20%E5%BC%95%E6%93%8E%E7%BA%A7%E5%B7%AE%E5%BC%82%C2%B7%E7%9C%9F%E6%9C%BA%E9%9F%B3%E8%B4%A8A%2FB%C2%B7%E8%A6%86%E7%9B%96%E5%BC%8F%E5%9B%9E%E6%BB%9A.md) | 移动端音效上线后又撤回、回滚版本号怎么定、Release 撤回怎么标 | **桌面验收通过 ≠ 移动端可用**（Web Audio 引擎级平台差异：Android WebView 无 compressor 自动 makeup）；回滚包 versionCode 必须递增；Release 撤回用标注不删 |
+
 
 ---
 
@@ -99,6 +116,18 @@
 | 子 agent 改坏了 / 报告与实际不符 | 01 |
 | 发版后要改哪些文档 | 02 |
 | 想把经验固化下来 | 01（Skill 化） |
+
+### 第六批症状补充（打包 / 安装器 / Android 音效）
+
+| 症状 | 去哪看 |
+|---|---|
+| 装完双击没反应 / 事件日志 UAC.dll_unloaded | 30 事故 1（asar 缺入口，先查 build.files） |
+| 覆盖安装弹「无法关闭」/「Failed to uninstall : 2」 | 30 事故 2（删除被拦非进程占用，做提权对照实验） |
+| 安装包体积虚高 / asar 里混进无关文件 | 30（build.files 白名单 + asar extract 分析） |
+| realme/OPPO 装包被安全守护拦、tap 点不动 | 31 事故 1（scrcpy 投屏代点） |
+| Android WebView 开 Web Audio 音质下降 | 33（引擎级差异：无 compressor 自动 makeup，不可修） |
+| 想读真机上的运行时状态（store/坐标） | 31 方法论 2（WebView CDP） |
+| 回滚已发布的坏版本 | 33 事故 2（versionCode 递增）+ 方法论 1（Release 标注撤回） |
 
 ### 第四批症状补充（PDF / Worker / 静态托管）
 
@@ -143,7 +172,15 @@
 
 **做新东西** — 找对应篇的「成功配方 / 具体实现」章节，里面是可照抄的清单（配色表、字号表、架构分层、脚本模板、命令）。
 
-**让 AI 用** — 把 `00_总索引 · 症状速查导航.md` 或具体主题篇投喂给你的 AI 助手，它能在开工前就知道这个环境里哪些坑不能踩。
+**让 AI 用** — 两种方式：
+
+1. **投喂式**（任何 AI）：把 `00_总索引` 或具体主题篇粘贴给 AI 助手。
+2. **Skill 式**（推荐）：仓库已内置 `AGENTS.md`（使用规范+检索方法+入库纪律）、
+   `index.json`（33 篇机器可读元数据：stack/keywords/symptoms/whenToRead/oneLiner）、
+   `errorStrings.json`（18 条报错串→文档映射）、`_TEMPLATE.md`（入库模板）。
+   把仓库 clone 到本机固定路径，让 AI 遇到报错先查 `errorStrings.json`、
+   打包/发版/真机任务开工前先读 `whenToRead` 匹配的篇目，解决新问题后按模板回写。
+   ZCode 用户：复制 `SKILL.md` 到 `.zcode/skills/zhishiku/` 即获得 `/zhishiku` 技能。
 
 ---
 
