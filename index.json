@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-03",
-  "total": 32,
+  "updated": "2026-11-08",
+  "total": 33,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -646,6 +646,34 @@
       ],
       "whenToRead": "移动端 Web Audio 实现前必读",
       "oneLiner": "AudioContext 会被挂起需三道自愈；降级=增益归零不用 dispose；音效默认关闭+双版本并存"
+    },
+    {
+      "id": 34,
+      "file": "34_网络映射盘 · Vite解析失灵·D1本地fsync·cmd中文注释.md",
+      "title": "网络映射盘",
+      "stack": [
+        "vite",
+        "cloudflare",
+        "windows"
+      ],
+      "keywords": [
+        "映射盘",
+        "网络盘",
+        "UNC",
+        "Failed to resolve entry",
+        "SQLITE_IOERR_FSYNC",
+        "cmd 中文乱码",
+        "MSYS_NO_PATHCONV",
+        "本地镜像构建"
+      ],
+      "symptoms": [
+        "映射盘上 vite 连自己都解析失败",
+        "wrangler d1 --local 报 SQLite fsync IO 错",
+        "cmd 批处理中文注释解析炸裂",
+        "Git Bash 调 robocopy 参数被转路径"
+      ],
+      "whenToRead": "项目放在映射网络盘/共享目录上做 Vite 构建或 wrangler 本地开发前必读",
+      "oneLiner": "映射网络盘上：构建/本地 D1 走本地镜像目录（realpath 盘符错位 + SQLite fsync 限制），.cmd 纯 ASCII"
     }
   ]
 }

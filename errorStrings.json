@@ -110,5 +110,41 @@
     "docs": [
       7
     ]
+  },
+  {
+    "pattern": "Failed to resolve entry for package",
+    "docs": [
+      34
+    ]
+  },
+  {
+    "pattern": "Could not resolve entry module",
+    "docs": [
+      34
+    ]
+  },
+  {
+    "pattern": "SQLITE_IOERR",
+    "docs": [
+      34
+    ]
+  },
+  {
+    "pattern": "disk I/O error",
+    "docs": [
+      34
+    ]
+  },
+  {
+    "pattern": "不是内部或外部命令",
+    "docs": [
+      34
+    ]
+  },
+  {
+    "pattern": "Address already in use",
+    "docs": [
+      34
+    ]
   }
 ]
