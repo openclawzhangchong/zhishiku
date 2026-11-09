@@ -176,7 +176,7 @@
 
 1. **投喂式**（任何 AI）：把 `00_总索引` 或具体主题篇粘贴给 AI 助手。
 2. **Skill 式**（推荐）：仓库已内置 `AGENTS.md`（使用规范+检索方法+入库纪律）、
-   `index.json`（33 篇机器可读元数据：stack/keywords/symptoms/whenToRead/oneLiner）、
+   `index.json`（37 篇机器可读元数据：stack/keywords/symptoms/whenToRead/oneLiner）、
    `errorStrings.json`（18 条报错串→文档映射）、`_TEMPLATE.md`（入库模板）。
    把仓库 clone 到本机固定路径，让 AI 遇到报错先查 `errorStrings.json`、
    打包/发版/真机任务开工前先读 `whenToRead` 匹配的篇目，解决新问题后按模板回写。

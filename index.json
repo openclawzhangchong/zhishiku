@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-08",
-  "total": 33,
+  "updated": "2026-11-10",
+  "total": 37,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -648,8 +648,83 @@
       "oneLiner": "AudioContext 会被挂起需三道自愈；降级=增益归零不用 dispose；音效默认关闭+双版本并存"
     },
     {
+      "id": 33,
+      "file": "33_Android音效撤回 · 引擎级差异·真机音质A/B·覆盖式回滚.md",
+      "title": "Android音效撤回",
+      "stack": [
+        "android",
+        "web-audio",
+        "release"
+      ],
+      "keywords": [
+        "Android WebView",
+        "Web Audio 平台差异",
+        "DynamicsCompressor makeup",
+        "音质 A/B 对比",
+        "回滚 versionCode 递增"
+      ],
+      "symptoms": [
+        "桌面音效过但移动端音质崩",
+        "回滚版本号怎么定",
+        "Release 撤回怎么标"
+      ],
+      "whenToRead": "移动端 Web Audio 上线后音质异常要撤回时",
+      "oneLiner": "桌面验收通过 ≠ 移动端可用（引擎级 makeup 差异不可调参）；回滚 versionCode 必须递增；Release 撤回用标注不删"
+    },
+    {
       "id": 34,
-      "file": "34_网络映射盘 · Vite解析失灵·D1本地fsync·cmd中文注释.md",
+      "file": "34_AI自主修bug · 报bug带截图·证据先于断言·五阶段闭环.md",
+      "title": "AI自主修bug",
+      "stack": [
+        "ai-collab",
+        "debugging",
+        "ai-autonomy"
+      ],
+      "keywords": [
+        "证据先于断言",
+        "待验证命题",
+        "静态复现实验",
+        "打在根因",
+        "报bug模板",
+        "反模式清单"
+      ],
+      "symptoms": [
+        "AI反复修不好一个bug",
+        "只有文字描述没截图",
+        "改完还是坏",
+        "把猜测当根因"
+      ],
+      "whenToRead": "接到 bug、要自主定位/修复，或要给 AI 报 bug 时",
+      "oneLiner": "证据先于断言——有真输入就跑实验量，别在代码里猜；用户回忆当待验证命题，先证伪再排工序"
+    },
+    {
+      "id": 35,
+      "file": "35_评论框定位与串评 · 聚焦光标致模板匹配掉阈值·拿真截图跑实验.md",
+      "title": "评论框定位与串评",
+      "stack": [
+        "windows-desktop",
+        "opencv",
+        "vision-automation"
+      ],
+      "keywords": [
+        "模板匹配掉阈值",
+        "聚焦光标",
+        "TM_CCOEFF_NORMED",
+        "拿真截图跑实验",
+        "旧坐标重锚",
+        "归属校验"
+      ],
+      "symptoms": [
+        "评论框在屏幕顶/底定位不到",
+        "给A的评论发到B",
+        "多个AI反复修不好"
+      ],
+      "whenToRead": "视觉自动化里同一目标有时认得有时认不得、或动作打到错误目标时",
+      "oneLiner": "真因是聚焦光标把模板匹配从1.000拉到0.828(<阈值0.85)，不是位置；破题靠拿真截图跑实验量出来"
+    },
+    {
+      "id": 36,
+      "file": "36_网络映射盘 · Vite解析失灵·D1本地fsync·cmd中文注释.md",
       "title": "网络映射盘",
       "stack": [
         "vite",
@@ -674,6 +749,33 @@
       ],
       "whenToRead": "项目放在映射网络盘/共享目录上做 Vite 构建或 wrangler 本地开发前必读",
       "oneLiner": "映射网络盘上：构建/本地 D1 走本地镜像目录（realpath 盘符错位 + SQLite fsync 限制），.cmd 纯 ASCII"
+    },
+    {
+      "id": 37,
+      "file": "37_Electron自检被正式版单实例锁挡死 · DBWM_USERDATA测试隔离.md",
+      "title": "Electron测试隔离",
+      "stack": [
+        "electron",
+        "e2e",
+        "nsis"
+      ],
+      "keywords": [
+        "单实例锁",
+        "requestSingleInstanceLock",
+        "userData",
+        "e2e秒退",
+        "托盘常驻",
+        "app.setPath",
+        "MSYS路径转换",
+        "NSIS静默安装"
+      ],
+      "symptoms": [
+        "e2e 自检全部断言超时且日志节选为空",
+        "应用启动即退无任何日志",
+        "Git Bash 里 /S 静默安装弹交互窗口"
+      ],
+      "whenToRead": "桌面应用 e2e/自动化在真机上跑不通、或 Git Bash 调原生安装器开关失效时",
+      "oneLiner": "开发实例与托盘常驻的正式版共用 userData 被单实例锁挡掉秒退——测试进程必须在 requestSingleInstanceLock 之前 app.setPath('userData', 独立目录); Git Bash 的 /S 会被 MSYS 路径转换吃掉"
     }
   ]
 }

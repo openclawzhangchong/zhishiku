@@ -1,4 +1,4 @@
-# 34 · 网络映射盘：Vite 解析失灵·本地 D1 fsync·cmd 中文注释炸解析
+# 36 · 网络映射盘：Vite 解析失灵·本地 D1 fsync·cmd 中文注释炸解析
 
 > **摘要**：项目放在 Windows 映射网络盘（`net use` 出来的 Z: = `\\服务器\共享\...`）上时，Vite 构建连 `vite` 自身都解析失败、wrangler 本地 D1 报 SQLite fsync IO 错、UTF-8 中文注释的 .cmd 批处理直接解析炸裂。三个坑根因不同（Vite realpath 盘符错位 / SQLite 要求本地 fsync / cmd 用 OEM 码页读脚本），但解法统一：**工作目录换成本地真路径（镜像同步），脚本纯 ASCII**。全部为 2026-11-08 个人工作台项目实测。
 
