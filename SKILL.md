@@ -31,6 +31,8 @@ cd C:/Users/Administrator/zhishiku-wt && git pull
 | git push 被墙 | 29、3 |
 | 与 AI 协作方式拿不准 | 01 |
 | 发版前后 | 02 |
+| 视频平台无水印解析（即梦/抖音系） | 38 |
+| 设计配额 / 限流 / 防刷 / 调试通道 | 38 |
 
 ## 使用规则（给 AI 的指令）
 
@@ -42,7 +44,7 @@ cd C:/Users/Administrator/zhishiku-wt && git pull
 
 ## 文件结构
 
-- `index.json` — 机器可读索引（33 篇元数据：stack/keywords/symptoms/whenToRead/oneLiner）
+- `index.json` — 机器可读索引（38 篇元数据：stack/keywords/symptoms/whenToRead/oneLiner）
 - `errorStrings.json` — 报错串 → 文档编号映射
 - `00_总索引 · 症状速查导航.md` — 人读导航（症状速查表 + 分批来源）
 - `_TEMPLATE.md` — 新条目模板
