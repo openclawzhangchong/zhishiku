@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-11-15",
-  "total": 39,
+  "total": 40,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -870,6 +870,65 @@
       ],
       "whenToRead": "改伪装/版本常量、CI秒挂排查、git被墙要推代码或tag时",
       "oneLiner": "伪装身份以真机解包为准（exe FileVersion+CLI package.json+grep asar），别抄仓库常量；CI秒挂=账单封锁（steps=0+annotation），本地NSIS+gh release create兜底；隧道也挂时API对象直传push（scripts/api_push.py：message无结尾换行、复刻本地原始ident行、gh api无-R）"
+    },
+    {
+      "id": 40,
+      "file": "40_frp复用上线公网隧道 · 冷启动TDZ·aria2多流·MSYS路径转换.md",
+      "title": "frp复用上线公网隧道",
+      "stack": [
+        "frp",
+        "caddy",
+        "node",
+        "windows",
+        "aliyun-ecs",
+        "cloudflare",
+        "git-bash"
+      ],
+      "keywords": [
+        "frp",
+        "frpc",
+        "frps",
+        "remotePort",
+        "allowPorts",
+        "Caddy 反代",
+        "reverse_proxy",
+        "公网隧道",
+        "管理面屏蔽",
+        "边缘安全",
+        "@block path",
+        "Cannot access 'log' before initialization",
+        "TDZ",
+        "暂时性死区",
+        "function 声明",
+        "uid.slice",
+        "冷启动",
+        "空数据目录",
+        "aria2c -x16",
+        "GitHub 限速",
+        "12KB/s",
+        "sftp ENOENT",
+        "MSYS_NO_PATHCONV",
+        "Git Bash 路径转换",
+        "paramiko",
+        "代理名冲突",
+        "frp 踢会话",
+        "测试隔离",
+        "环境变量覆盖",
+        "核对门"
+      ],
+      "symptoms": [
+        "本地服务想上公网域名但 ECS 已有 frps/Caddy",
+        "不敢在云服务器开新端口怕被扫",
+        "反代网关的管理接口跟着隧道暴露到公网",
+        "二改开源项目 node 启动即崩 Cannot access 'log' before initialization",
+        "修完 TDZ 又崩 Cannot read properties of null (reading 'slice')",
+        "ECS 从 GitHub 下载 release 只有十几 KB/s",
+        "ghproxy 镜像全挂 / 华为云镜像缺版本",
+        "Git Bash 传 /tmp/xxx 参数给 python sftp 报 ENOENT",
+        "测试 frp 隧道会把线上同名会话踢下线"
+      ],
+      "whenToRead": "给本地网关上 frp 公网隧道；frps 已被占用要加新隧道；二改开源项目动代码前；frp 相关自动化测试不能干扰线上会话",
+      "oneLiner": "复用存量 frps（TCP 代理占 allowPorts 内 808x）+ Caddy 按域名反代，零新增入站端口；管理面在 Caddy 边缘按路径屏蔽；二改项目先空数据冷启动跑一遍（TDZ/空引用都在没覆盖过的分支里）；测试 frpc 必换代理名防互踢"
     }
   ]
 }
