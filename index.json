@@ -1,822 +1,875 @@
 {
- "version": 1,
- "updated": "2026-11-14",
- "total": 38,
- "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
- "docs": [
-  {
-   "id": 1,
-   "file": "01_人机协作 · 方案先行·批量授权·子agent并行.md",
-   "title": "人机协作",
-   "stack": [
-    "ai-collab"
-   ],
-   "keywords": [
-    "方案先行",
-    "批量授权",
-    "子agent",
-    "并行开发"
-   ],
-   "symptoms": [
-    "不知道该怎么跟AI配合",
-    "子agent改坏",
-    "想一次问清"
-   ],
-   "whenToRead": "与 AI 协作方式拿不准时",
-   "oneLiner": "先方案后动手，方案批准才改代码；一次问清所有决策点"
-  },
-  {
-   "id": 2,
-   "file": "02_发版交付 · tag锚点与文档回填八步.md",
-   "title": "发版交付",
-   "stack": [
-    "release",
-    "tag"
-   ],
-   "keywords": [
-    "tag",
-    "回滚",
-    "文档回填",
-    "发版checklist"
-   ],
-   "symptoms": [
-    "发版后要改哪些文档",
-    "想回滚版本"
-   ],
-   "whenToRead": "每次发版前后",
-   "oneLiner": "tag 是回滚保险箱，文档回填是发版的第 8 步"
-  },
-  {
-   "id": 3,
-   "file": "03_Git推送 · 本机502走API四步法.md",
-   "title": "Git推送",
-   "stack": [
-    "git",
-    "github"
-   ],
-   "keywords": [
-    "502",
-    "API四步法",
-    "push失败"
-   ],
-   "symptoms": [
-    "推不动代码",
-    "CI红了"
-   ],
-   "whenToRead": "推不动代码、CI 红了",
-   "oneLiner": "本地 git 不通就走 API 四步法；一个仓库只用一种通道"
-  },
-  {
-   "id": 4,
-   "file": "04_设备协议 · MAC必须小写·tools-call方向.md",
-   "title": "设备协议",
-   "stack": [
-    "mcp",
-    "webrtc"
-   ],
-   "keywords": [
-    "MAC小写",
-    "tools-call",
-    "WebSocket"
-   ],
-   "symptoms": [
-    "连不上",
-    "秒断",
-    "无声",
-    "零响应"
-   ],
-   "whenToRead": "连不上/秒断/无声/零响应",
-   "oneLiner": "虚拟 MAC 必须全小写；MCP 的 tools/call 只能服务器→设备"
-  },
-  {
-   "id": 5,
-   "file": "05_Flutter · 0.x锁版本·abiFilters·golden两类.md",
-   "title": "Flutter",
-   "stack": [
-    "flutter",
-    "dart"
-   ],
-   "keywords": [
-    "0.x版本",
-    "abiFilters",
-    "golden"
-   ],
-   "symptoms": [
-    "Flutter编译不过",
-    "依赖冲突",
-    "golden diff"
-   ],
-   "whenToRead": "Flutter 编译/依赖/golden 出错",
-   "oneLiner": "0.x 依赖锁版本、加原生库先配 abiFilters、golden 分两类"
-  },
-  {
-   "id": 6,
-   "file": "06_单文件HTML · 零外链·零侵入注入·缺div吞页.md",
-   "title": "单文件HTML",
-   "stack": [
-    "html",
-    "web"
-   ],
-   "keywords": [
-    "零外链",
-    "注入",
-    "div缺失",
-    "缓存"
-   ],
-   "symptoms": [
-    "网页看不见",
-    "点了没反应",
-    "缓存假bug"
-   ],
-   "whenToRead": "网页看不见/点了没反应/缓存假bug",
-   "oneLiner": "少一个 </div> 能吞掉半个页面；产物一律加版本水印"
-  },
-  {
-   "id": 7,
-   "file": "07_题库处理 · 正则错位·答案配对·中文路径.md",
-   "title": "题库处理",
-   "stack": [
-    "python",
-    "regex"
-   ],
-   "keywords": [
-    "正则错位",
-    "答案配对",
-    "中文路径"
-   ],
-   "symptoms": [
-    "抽题错位",
-    "答案张冠李戴",
-    "中文路径失败"
-   ],
-   "whenToRead": "抽题/对答案/解析文档",
-   "oneLiner": "先抽查源质量再解析；中文路径先打补丁再动手"
-  },
-  {
-   "id": 8,
-   "file": "08_课件交付 · 每章主色·30px投影·双层高亮.md",
-   "title": "课件交付",
-   "stack": [
-    "ppt",
-    "课件"
-   ],
-   "keywords": [
-    "主色",
-    "30px投影",
-    "双层高亮",
-    "单文件"
-   ],
-   "symptoms": [
-    "做课件",
-    "组卷",
-    "教辅"
-   ],
-   "whenToRead": "做课件/组卷/教辅",
-   "oneLiner": "紫色主题+每章主色、30px 投影字号、双层高亮、单文件<3MB"
-  },
-  {
-   "id": 9,
-   "file": "09_HTML5游戏 · 固定步长与Node-vm确定性验证.md",
-   "title": "HTML5游戏",
-   "stack": [
-    "game",
-    "node-vm"
-   ],
-   "keywords": [
-    "固定步长",
-    "确定性验证",
-    "bot测试"
-   ],
-   "symptoms": [
-    "游戏bug抓不到",
-    "bot乱跑"
-   ],
-   "whenToRead": "做小游戏/写测试脚本",
-   "oneLiner": "bot 乱跑抓不到 bug，确定性单测才能一击命中"
-  },
-  {
-   "id": 10,
-   "file": "10_MCP与云端 · tools-call实测·Pages 25MiB·KV绑定.md",
-   "title": "MCP与云端",
-   "stack": [
-    "mcp",
-    "cloudflare",
-    "pages"
-   ],
-   "keywords": [
-    "tools-call",
-    "25MiB",
-    "KV绑定",
-    "Worker"
-   ],
-   "symptoms": [
-    "MCP工具调不通",
-    "部署失败",
-    "429"
-   ],
-   "whenToRead": "配 MCP/部署 Worker/Pages",
-   "oneLiner": "tools/list 通过只是协议通，必须再打一次 tools/call"
-  },
-  {
-   "id": 11,
-   "file": "11_UI还原 · 四层检查·token先行·不引第三方库.md",
-   "title": "UI还原",
-   "stack": [
-    "ui",
-    "设计"
-   ],
-   "keywords": [
-    "四层检查",
-    "token先行",
-    "第三方库"
-   ],
-   "symptoms": [
-    "UI不还原",
-    "改设计不生效"
-   ],
-   "whenToRead": "做 UI/贴原型/改设计",
-   "oneLiner": "四层检查缺一层就白改；先修 token 再谈组件"
-  },
-  {
-   "id": 12,
-   "file": "12_工具链 · 代理变量·反引号·中文路径·沙箱黑名单.md",
-   "title": "工具链",
-   "stack": [
-    "tooling"
-   ],
-   "keywords": [
-    "代理变量",
-    "反引号",
-    "中文路径",
-    "沙箱黑名单"
-   ],
-   "symptoms": [
-    "命令报错",
-    "路径乱码",
-    "沙箱拦截"
-   ],
-   "whenToRead": "命令报错/路径乱码/沙箱拦截",
-   "oneLiner": "代理变量、反引号、中文路径、沙箱黑名单是四大隐形杀手"
-  },
-  {
-   "id": 13,
-   "file": "13_AI自闭环 · 探针先行·日志闭环·对照实验.md",
-   "title": "AI自闭环",
-   "stack": [
-    "ai-testing"
-   ],
-   "keywords": [
-    "探针先行",
-    "日志闭环",
-    "对照实验"
-   ],
-   "symptoms": [
-    "想让AI自测自修",
-    "测试不闭环"
-   ],
-   "whenToRead": "想让 AI 自己测自己修",
-   "oneLiner": "埋点优先于猜测；探针先行；日志闭环不让用户查"
-  },
-  {
-   "id": 14,
-   "file": "14_铁律速查 · 100条（第一批）.md",
-   "title": "铁律速查1",
-   "stack": [
-    "general"
-   ],
-   "keywords": [
-    "铁律",
-    "100条"
-   ],
-   "symptoms": [
-    "随时翻",
-    "贴墙用"
-   ],
-   "whenToRead": "随时翻",
-   "oneLiner": "100 条一句话铁律（第一批）"
-  },
-  {
-   "id": 15,
-   "file": "15_AI聊天产品 · 上下文预算·图片真源·开关归属.md",
-   "title": "AI聊天产品",
-   "stack": [
-    "ai-chat"
-   ],
-   "keywords": [
-    "上下文预算",
-    "图片真源",
-    "开关归属"
-   ],
-   "symptoms": [
-    "AI对话/上下文/图片问题"
-   ],
-   "whenToRead": "做 AI 对话/上下文/图片功能",
-   "oneLiner": "难点不是调模型，是上下文预算、图片真源、开关归属"
-  },
-  {
-   "id": 16,
-   "file": "16_Cloudflare-D1 · 默认值陷阱·Worker非Node·UTC.md",
-   "title": "Cloudflare-D1",
-   "stack": [
-    "cloudflare",
-    "d1"
-   ],
-   "keywords": [
-    "默认值陷阱",
-    "Worker非Node",
-    "UTC"
-   ],
-   "symptoms": [
-    "D1/绑定/部署问题"
-   ],
-   "whenToRead": "配 wrangler/D1/绑定",
-   "oneLiner": "=== '1' 是默认关、!== '0' 是默认开；Worker 不是 Node"
-  },
-  {
-   "id": 17,
-   "file": "17_提示词 · 模型不知道今天几号·别写反例.md",
-   "title": "提示词",
-   "stack": [
-    "prompt"
-   ],
-   "keywords": [
-    "系统日期",
-    "反例",
-    "系统提示词"
-   ],
-   "symptoms": [
-    "AI答错日期/时效内容"
-   ],
-   "whenToRead": "AI 答错时效内容",
-   "oneLiner": "模型不是不知道，是系统没告诉它"
-  },
-  {
-   "id": 18,
-   "file": "18_语音STT · 伪输入框·双Whisper入参差异.md",
-   "title": "语音STT",
-   "stack": [
-    "stt",
-    "whisper"
-   ],
-   "keywords": [
-    "伪输入框",
-    "双Whisper"
-   ],
-   "symptoms": [
-    "语音输入问题"
-   ],
-   "whenToRead": "语音输入/STT",
-   "oneLiner": "伪输入框与双 Whisper 入参差异"
-  },
-  {
-   "id": 19,
-   "file": "19_桌面自动化 · 无控件树·自下而上·DPI漂移.md",
-   "title": "桌面自动化",
-   "stack": [
-    "desktop-automation"
-   ],
-   "keywords": [
-    "无控件树",
-    "自下而上",
-    "DPI"
-   ],
-   "symptoms": [
-    "桌面自动化点不中"
-   ],
-   "whenToRead": "桌面自动化/UIA",
-   "oneLiner": "无控件树走自下而上；DPI 缩放导致坐标漂移"
-  },
-  {
-   "id": 20,
-   "file": "20_安卓外壳 · 三份副本·JDK≠语言级别·204是成功.md",
-   "title": "安卓外壳",
-   "stack": [
-    "android",
-    "capacitor"
-   ],
-   "keywords": [
-    "三份副本",
-    "JDK",
-    "204"
-   ],
-   "symptoms": [
-    "安卓壳构建/接口问题"
-   ],
-   "whenToRead": "安卓壳构建",
-   "oneLiner": "三份副本要同步；JDK≠语言级别；204 是成功"
-  },
-  {
-   "id": 21,
-   "file": "21_前端重构 · 先量数字·副本漂移·安全区.md",
-   "title": "前端重构",
-   "stack": [
-    "frontend",
-    "refactor"
-   ],
-   "keywords": [
-    "先量数字",
-    "副本漂移",
-    "安全区"
-   ],
-   "symptoms": [
-    "前端重构走样"
-   ],
-   "whenToRead": "前端重构",
-   "oneLiner": "先量数字再动手；副本会漂移；安全区要留"
-  },
-  {
-   "id": 22,
-   "file": "22_流程质量 · HANDOFF十节·变异测试·棘轮.md",
-   "title": "流程质量",
-   "stack": [
-    "handoff",
-    "quality"
-   ],
-   "keywords": [
-    "HANDOFF十节",
-    "变异测试",
-    "棘轮"
-   ],
-   "symptoms": [
-    "交接质量差",
-    "质量回退"
-   ],
-   "whenToRead": "交接/质量保障",
-   "oneLiner": "HANDOFF 十节 + 变异测试 + 棘轮"
-  },
-  {
-   "id": 23,
-   "file": "23_事故复盘 · 8次看着像A其实是B.md",
-   "title": "事故复盘",
-   "stack": [
-    "postmortem"
-   ],
-   "keywords": [
-    "症状对照表",
-    "看着像A其实是B"
-   ],
-   "symptoms": [
-    "各种诡异事故"
-   ],
-   "whenToRead": "遇到诡异事故",
-   "oneLiner": "8 次「看着像 A 其实是 B」——先做对照实验"
-  },
-  {
-   "id": 24,
-   "file": "24_铁律速查 · 80条（第二批）.md",
-   "title": "铁律速查2",
-   "stack": [
-    "general"
-   ],
-   "keywords": [
-    "铁律",
-    "80条"
-   ],
-   "symptoms": [
-    "随时翻"
-   ],
-   "whenToRead": "随时翻",
-   "oneLiner": "80 条一句话铁律（第二批）"
-  },
-  {
-   "id": 25,
-   "file": "25_Windows静默后台任务 · 闪屏·编码方向·日志策略.md",
-   "title": "Windows静默后台任务",
-   "stack": [
-    "windows",
-    "background"
-   ],
-   "keywords": [
-    "闪屏",
-    "编码方向",
-    "日志策略"
-   ],
-   "symptoms": [
-    "后台任务闪屏/日志乱"
-   ],
-   "whenToRead": "Windows 后台任务",
-   "oneLiner": "闪屏、编码方向、日志策略三件套"
-  },
-  {
-   "id": 26,
-   "file": "26_AI聊天站迭代 · 移动端解锁·通道记忆·纯搬运对账.md",
-   "title": "AI聊天站迭代",
-   "stack": [
-    "ai-chat"
-   ],
-   "keywords": [
-    "移动端解锁",
-    "通道记忆",
-    "纯搬运对账"
-   ],
-   "symptoms": [
-    "聊天站迭代问题"
-   ],
-   "whenToRead": "聊天站迭代",
-   "oneLiner": "移动端解锁、通道记忆、纯搬运对账"
-  },
-  {
-   "id": 27,
-   "file": "27_豆包去水印 · 水印是URL模板不是像素——图片视频双通道研发复盘.md",
-   "title": "豆包去水印",
-   "stack": [
-    "media",
-    "watermark"
-   ],
-   "keywords": [
-    "URL模板",
-    "双通道"
-   ],
-   "symptoms": [
-    "去水印下载失败"
-   ],
-   "whenToRead": "媒体水印处理",
-   "oneLiner": "水印是 URL 模板不是像素——图片视频双通道"
-  },
-  {
-   "id": 28,
-   "file": "28_PDF压缩站 · Ghostscript参数失效就换渲染管线.md",
-   "title": "PDF压缩站",
-   "stack": [
-    "pdf",
-    "ghostscript"
-   ],
-   "keywords": [
-    "gs参数失效",
-    "渲染管线",
-    "pdf.js"
-   ],
-   "symptoms": [
-    "PDF压缩/worker加载"
-   ],
-   "whenToRead": "浏览器端 PDF 处理",
-   "oneLiner": "gs 参数失效就换 pdf.js 渲染管线"
-  },
-  {
-   "id": 29,
-   "file": "29_GitHub访问 · ECS隧道三模式·PAC免管员分流·托盘exe.md",
-   "title": "GitHub访问",
-   "stack": [
-    "git",
-    "tunnel"
-   ],
-   "keywords": [
-    "ECS隧道",
-    "PAC分流",
-    "托盘exe"
-   ],
-   "symptoms": [
-    "push被墙",
-    "打不开GitHub"
-   ],
-   "whenToRead": "GitHub 被墙",
-   "oneLiner": "ECS SSH 中转三模式；上传必死下载偶通是上行干扰"
-  },
-  {
-   "id": 30,
-   "file": "30_Windows打包 · build.files白名单·事件日志会骗人·安装器钩子.md",
-   "title": "Windows打包",
-   "stack": [
-    "electron",
-    "electron-builder",
-    "nsis"
-   ],
-   "keywords": [
-    "build.files",
-    "asar",
-    "EBUSY",
-    "WinError 5",
-    "UAC.dll_unloaded",
-    "无法关闭",
-    "Failed to uninstall"
-   ],
-   "symptoms": [
-    "装完双击没反应",
-    "覆盖安装弹无法关闭",
-    "安装包体积虚高",
-    "asar缺入口"
-   ],
-   "whenToRead": "打包前/覆盖安装前必读",
-   "oneLiner": "build.files 必须白名单（.gitignore 会吃掉 out/）；事件日志的故障模块名会骗人；装到用户可写目录免提权"
-  },
-  {
-   "id": 31,
-   "file": "31_Android真机调试 · scrcpy绕守护·CDP读store·dpr换算.md",
-   "title": "Android真机调试",
-   "stack": [
-    "android",
-    "adb",
-    "scrcpy",
-    "cdp"
-   ],
-   "keywords": [
-    "安全守护",
-    "scrcpy",
-    "CDP",
-    "uiautomator",
-    "dpr",
-    "pinia"
-   ],
-   "symptoms": [
-    "真机装不上卡风险页",
-    "input tap无效",
-    "想知道运行时状态"
-   ],
-   "whenToRead": "真机安装/真机调试前必读",
-   "oneLiner": "首次安装必人工过风险页；scrcpy 可代点；CDP 读 store+getBoundingClientRect×dpr"
-  },
-  {
-   "id": 32,
-   "file": "32_移动端音效 · WebView挂起三道防线·旁路降级不用dispose.md",
-   "title": "移动端音效",
-   "stack": [
-    "android",
-    "web-audio",
-    "capacitor"
-   ],
-   "keywords": [
-    "AudioContext挂起",
-    "createMediaElementSource",
-    "旁路降级",
-    "双版本"
-   ],
-   "symptoms": [
-    "移动端音效息屏失效",
-    "降级方案设计"
-   ],
-   "whenToRead": "移动端 Web Audio 实现前必读",
-   "oneLiner": "AudioContext 会被挂起需三道自愈；降级=增益归零不用 dispose；音效默认关闭+双版本并存"
-  },
-  {
-   "id": 33,
-   "file": "33_Android音效撤回 · 引擎级差异·真机音质A/B·覆盖式回滚.md",
-   "title": "Android音效撤回",
-   "stack": [
-    "android",
-    "web-audio",
-    "release"
-   ],
-   "keywords": [
-    "Android WebView",
-    "Web Audio 平台差异",
-    "DynamicsCompressor makeup",
-    "音质 A/B 对比",
-    "回滚 versionCode 递增"
-   ],
-   "symptoms": [
-    "桌面音效过但移动端音质崩",
-    "回滚版本号怎么定",
-    "Release 撤回怎么标"
-   ],
-   "whenToRead": "移动端 Web Audio 上线后音质异常要撤回时",
-   "oneLiner": "桌面验收通过 ≠ 移动端可用（引擎级 makeup 差异不可调参）；回滚 versionCode 必须递增；Release 撤回用标注不删"
-  },
-  {
-   "id": 34,
-   "file": "34_AI自主修bug · 报bug带截图·证据先于断言·五阶段闭环.md",
-   "title": "AI自主修bug",
-   "stack": [
-    "ai-collab",
-    "debugging",
-    "ai-autonomy"
-   ],
-   "keywords": [
-    "证据先于断言",
-    "待验证命题",
-    "静态复现实验",
-    "打在根因",
-    "报bug模板",
-    "反模式清单"
-   ],
-   "symptoms": [
-    "AI反复修不好一个bug",
-    "只有文字描述没截图",
-    "改完还是坏",
-    "把猜测当根因"
-   ],
-   "whenToRead": "接到 bug、要自主定位/修复，或要给 AI 报 bug 时",
-   "oneLiner": "证据先于断言——有真输入就跑实验量，别在代码里猜；用户回忆当待验证命题，先证伪再排工序"
-  },
-  {
-   "id": 35,
-   "file": "35_评论框定位与串评 · 聚焦光标致模板匹配掉阈值·拿真截图跑实验.md",
-   "title": "评论框定位与串评",
-   "stack": [
-    "windows-desktop",
-    "opencv",
-    "vision-automation"
-   ],
-   "keywords": [
-    "模板匹配掉阈值",
-    "聚焦光标",
-    "TM_CCOEFF_NORMED",
-    "拿真截图跑实验",
-    "旧坐标重锚",
-    "归属校验"
-   ],
-   "symptoms": [
-    "评论框在屏幕顶/底定位不到",
-    "给A的评论发到B",
-    "多个AI反复修不好"
-   ],
-   "whenToRead": "视觉自动化里同一目标有时认得有时认不得、或动作打到错误目标时",
-   "oneLiner": "真因是聚焦光标把模板匹配从1.000拉到0.828(<阈值0.85)，不是位置；破题靠拿真截图跑实验量出来"
-  },
-  {
-   "id": 36,
-   "file": "36_网络映射盘 · Vite解析失灵·D1本地fsync·cmd中文注释.md",
-   "title": "网络映射盘",
-   "stack": [
-    "vite",
-    "cloudflare",
-    "windows"
-   ],
-   "keywords": [
-    "映射盘",
-    "网络盘",
-    "UNC",
-    "Failed to resolve entry",
-    "SQLITE_IOERR_FSYNC",
-    "cmd 中文乱码",
-    "MSYS_NO_PATHCONV",
-    "本地镜像构建"
-   ],
-   "symptoms": [
-    "映射盘上 vite 连自己都解析失败",
-    "wrangler d1 --local 报 SQLite fsync IO 错",
-    "cmd 批处理中文注释解析炸裂",
-    "Git Bash 调 robocopy 参数被转路径"
-   ],
-   "whenToRead": "项目放在映射网络盘/共享目录上做 Vite 构建或 wrangler 本地开发前必读",
-   "oneLiner": "映射网络盘上：构建/本地 D1 走本地镜像目录（realpath 盘符错位 + SQLite fsync 限制），.cmd 纯 ASCII"
-  },
-  {
-   "id": 37,
-   "file": "37_Electron自检被正式版单实例锁挡死 · DBWM_USERDATA测试隔离.md",
-   "title": "Electron测试隔离",
-   "stack": [
-    "electron",
-    "e2e",
-    "nsis"
-   ],
-   "keywords": [
-    "单实例锁",
-    "requestSingleInstanceLock",
-    "userData",
-    "e2e秒退",
-    "托盘常驻",
-    "app.setPath",
-    "MSYS路径转换",
-    "NSIS静默安装"
-   ],
-   "symptoms": [
-    "e2e 自检全部断言超时且日志节选为空",
-    "应用启动即退无任何日志",
-    "Git Bash 里 /S 静默安装弹交互窗口"
-   ],
-   "whenToRead": "桌面应用 e2e/自动化在真机上跑不通、或 Git Bash 调原生安装器开关失效时",
-   "oneLiner": "开发实例与托盘常驻的正式版共用 userData 被单实例锁挡掉秒退——测试进程必须在 requestSingleInstanceLock 之前 app.setPath('userData', 独立目录); Git Bash 的 /S 会被 MSYS 路径转换吃掉"
-  },
-  {
-   "id": 38,
-   "file": "38_即梦无水印与配额红蓝对抗 · delogo动态水印·信任边界.md",
-   "title": "即梦无水印与配额红蓝对抗",
-   "stack": [
-    "python",
-    "ffmpeg",
-    "web-security"
-   ],
-   "keywords": [
-    "即梦",
-    "jimeng",
-    "无水印",
-    "水印",
-    "delogo",
-    "动态水印",
-    "anytocopy",
-    "dy-download",
-    "配额",
-    "quota",
-    "限流",
-    "防刷",
-    "信任边界",
-    "x-fp",
-    "debug参数",
-    "红蓝对抗",
-    "landing_page",
-    "get_item_info",
-    "365yg"
-   ],
-   "symptoms": [
-    "分享链接下载的全是带水印视频",
-    "改CDN参数去不掉水印",
-    "水印会动换位置",
-    "每日免费次数被绕过",
-    "限流被刷",
-    "调试功能被滥用"
-   ],
-   "whenToRead": "做视频平台无水印解析、或设计配额/限流/防刷方案时",
-   "oneLiner": "水印烧在文件里改URL没用（动态水印用delogo按时间区段圈）；客户端可控的头和URL参数都不能当配额信任锚"
-  }
- ]
+  "version": 1,
+  "updated": "2026-11-15",
+  "total": 39,
+  "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
+  "docs": [
+    {
+      "id": 1,
+      "file": "01_人机协作 · 方案先行·批量授权·子agent并行.md",
+      "title": "人机协作",
+      "stack": [
+        "ai-collab"
+      ],
+      "keywords": [
+        "方案先行",
+        "批量授权",
+        "子agent",
+        "并行开发"
+      ],
+      "symptoms": [
+        "不知道该怎么跟AI配合",
+        "子agent改坏",
+        "想一次问清"
+      ],
+      "whenToRead": "与 AI 协作方式拿不准时",
+      "oneLiner": "先方案后动手，方案批准才改代码；一次问清所有决策点"
+    },
+    {
+      "id": 2,
+      "file": "02_发版交付 · tag锚点与文档回填八步.md",
+      "title": "发版交付",
+      "stack": [
+        "release",
+        "tag"
+      ],
+      "keywords": [
+        "tag",
+        "回滚",
+        "文档回填",
+        "发版checklist"
+      ],
+      "symptoms": [
+        "发版后要改哪些文档",
+        "想回滚版本"
+      ],
+      "whenToRead": "每次发版前后",
+      "oneLiner": "tag 是回滚保险箱，文档回填是发版的第 8 步"
+    },
+    {
+      "id": 3,
+      "file": "03_Git推送 · 本机502走API四步法.md",
+      "title": "Git推送",
+      "stack": [
+        "git",
+        "github"
+      ],
+      "keywords": [
+        "502",
+        "API四步法",
+        "push失败"
+      ],
+      "symptoms": [
+        "推不动代码",
+        "CI红了"
+      ],
+      "whenToRead": "推不动代码、CI 红了",
+      "oneLiner": "本地 git 不通就走 API 四步法；一个仓库只用一种通道"
+    },
+    {
+      "id": 4,
+      "file": "04_设备协议 · MAC必须小写·tools-call方向.md",
+      "title": "设备协议",
+      "stack": [
+        "mcp",
+        "webrtc"
+      ],
+      "keywords": [
+        "MAC小写",
+        "tools-call",
+        "WebSocket"
+      ],
+      "symptoms": [
+        "连不上",
+        "秒断",
+        "无声",
+        "零响应"
+      ],
+      "whenToRead": "连不上/秒断/无声/零响应",
+      "oneLiner": "虚拟 MAC 必须全小写；MCP 的 tools/call 只能服务器→设备"
+    },
+    {
+      "id": 5,
+      "file": "05_Flutter · 0.x锁版本·abiFilters·golden两类.md",
+      "title": "Flutter",
+      "stack": [
+        "flutter",
+        "dart"
+      ],
+      "keywords": [
+        "0.x版本",
+        "abiFilters",
+        "golden"
+      ],
+      "symptoms": [
+        "Flutter编译不过",
+        "依赖冲突",
+        "golden diff"
+      ],
+      "whenToRead": "Flutter 编译/依赖/golden 出错",
+      "oneLiner": "0.x 依赖锁版本、加原生库先配 abiFilters、golden 分两类"
+    },
+    {
+      "id": 6,
+      "file": "06_单文件HTML · 零外链·零侵入注入·缺div吞页.md",
+      "title": "单文件HTML",
+      "stack": [
+        "html",
+        "web"
+      ],
+      "keywords": [
+        "零外链",
+        "注入",
+        "div缺失",
+        "缓存"
+      ],
+      "symptoms": [
+        "网页看不见",
+        "点了没反应",
+        "缓存假bug"
+      ],
+      "whenToRead": "网页看不见/点了没反应/缓存假bug",
+      "oneLiner": "少一个 </div> 能吞掉半个页面；产物一律加版本水印"
+    },
+    {
+      "id": 7,
+      "file": "07_题库处理 · 正则错位·答案配对·中文路径.md",
+      "title": "题库处理",
+      "stack": [
+        "python",
+        "regex"
+      ],
+      "keywords": [
+        "正则错位",
+        "答案配对",
+        "中文路径"
+      ],
+      "symptoms": [
+        "抽题错位",
+        "答案张冠李戴",
+        "中文路径失败"
+      ],
+      "whenToRead": "抽题/对答案/解析文档",
+      "oneLiner": "先抽查源质量再解析；中文路径先打补丁再动手"
+    },
+    {
+      "id": 8,
+      "file": "08_课件交付 · 每章主色·30px投影·双层高亮.md",
+      "title": "课件交付",
+      "stack": [
+        "ppt",
+        "课件"
+      ],
+      "keywords": [
+        "主色",
+        "30px投影",
+        "双层高亮",
+        "单文件"
+      ],
+      "symptoms": [
+        "做课件",
+        "组卷",
+        "教辅"
+      ],
+      "whenToRead": "做课件/组卷/教辅",
+      "oneLiner": "紫色主题+每章主色、30px 投影字号、双层高亮、单文件<3MB"
+    },
+    {
+      "id": 9,
+      "file": "09_HTML5游戏 · 固定步长与Node-vm确定性验证.md",
+      "title": "HTML5游戏",
+      "stack": [
+        "game",
+        "node-vm"
+      ],
+      "keywords": [
+        "固定步长",
+        "确定性验证",
+        "bot测试"
+      ],
+      "symptoms": [
+        "游戏bug抓不到",
+        "bot乱跑"
+      ],
+      "whenToRead": "做小游戏/写测试脚本",
+      "oneLiner": "bot 乱跑抓不到 bug，确定性单测才能一击命中"
+    },
+    {
+      "id": 10,
+      "file": "10_MCP与云端 · tools-call实测·Pages 25MiB·KV绑定.md",
+      "title": "MCP与云端",
+      "stack": [
+        "mcp",
+        "cloudflare",
+        "pages"
+      ],
+      "keywords": [
+        "tools-call",
+        "25MiB",
+        "KV绑定",
+        "Worker"
+      ],
+      "symptoms": [
+        "MCP工具调不通",
+        "部署失败",
+        "429"
+      ],
+      "whenToRead": "配 MCP/部署 Worker/Pages",
+      "oneLiner": "tools/list 通过只是协议通，必须再打一次 tools/call"
+    },
+    {
+      "id": 11,
+      "file": "11_UI还原 · 四层检查·token先行·不引第三方库.md",
+      "title": "UI还原",
+      "stack": [
+        "ui",
+        "设计"
+      ],
+      "keywords": [
+        "四层检查",
+        "token先行",
+        "第三方库"
+      ],
+      "symptoms": [
+        "UI不还原",
+        "改设计不生效"
+      ],
+      "whenToRead": "做 UI/贴原型/改设计",
+      "oneLiner": "四层检查缺一层就白改；先修 token 再谈组件"
+    },
+    {
+      "id": 12,
+      "file": "12_工具链 · 代理变量·反引号·中文路径·沙箱黑名单.md",
+      "title": "工具链",
+      "stack": [
+        "tooling"
+      ],
+      "keywords": [
+        "代理变量",
+        "反引号",
+        "中文路径",
+        "沙箱黑名单"
+      ],
+      "symptoms": [
+        "命令报错",
+        "路径乱码",
+        "沙箱拦截"
+      ],
+      "whenToRead": "命令报错/路径乱码/沙箱拦截",
+      "oneLiner": "代理变量、反引号、中文路径、沙箱黑名单是四大隐形杀手"
+    },
+    {
+      "id": 13,
+      "file": "13_AI自闭环 · 探针先行·日志闭环·对照实验.md",
+      "title": "AI自闭环",
+      "stack": [
+        "ai-testing"
+      ],
+      "keywords": [
+        "探针先行",
+        "日志闭环",
+        "对照实验"
+      ],
+      "symptoms": [
+        "想让AI自测自修",
+        "测试不闭环"
+      ],
+      "whenToRead": "想让 AI 自己测自己修",
+      "oneLiner": "埋点优先于猜测；探针先行；日志闭环不让用户查"
+    },
+    {
+      "id": 14,
+      "file": "14_铁律速查 · 100条（第一批）.md",
+      "title": "铁律速查1",
+      "stack": [
+        "general"
+      ],
+      "keywords": [
+        "铁律",
+        "100条"
+      ],
+      "symptoms": [
+        "随时翻",
+        "贴墙用"
+      ],
+      "whenToRead": "随时翻",
+      "oneLiner": "100 条一句话铁律（第一批）"
+    },
+    {
+      "id": 15,
+      "file": "15_AI聊天产品 · 上下文预算·图片真源·开关归属.md",
+      "title": "AI聊天产品",
+      "stack": [
+        "ai-chat"
+      ],
+      "keywords": [
+        "上下文预算",
+        "图片真源",
+        "开关归属"
+      ],
+      "symptoms": [
+        "AI对话/上下文/图片问题"
+      ],
+      "whenToRead": "做 AI 对话/上下文/图片功能",
+      "oneLiner": "难点不是调模型，是上下文预算、图片真源、开关归属"
+    },
+    {
+      "id": 16,
+      "file": "16_Cloudflare-D1 · 默认值陷阱·Worker非Node·UTC.md",
+      "title": "Cloudflare-D1",
+      "stack": [
+        "cloudflare",
+        "d1"
+      ],
+      "keywords": [
+        "默认值陷阱",
+        "Worker非Node",
+        "UTC"
+      ],
+      "symptoms": [
+        "D1/绑定/部署问题"
+      ],
+      "whenToRead": "配 wrangler/D1/绑定",
+      "oneLiner": "=== '1' 是默认关、!== '0' 是默认开；Worker 不是 Node"
+    },
+    {
+      "id": 17,
+      "file": "17_提示词 · 模型不知道今天几号·别写反例.md",
+      "title": "提示词",
+      "stack": [
+        "prompt"
+      ],
+      "keywords": [
+        "系统日期",
+        "反例",
+        "系统提示词"
+      ],
+      "symptoms": [
+        "AI答错日期/时效内容"
+      ],
+      "whenToRead": "AI 答错时效内容",
+      "oneLiner": "模型不是不知道，是系统没告诉它"
+    },
+    {
+      "id": 18,
+      "file": "18_语音STT · 伪输入框·双Whisper入参差异.md",
+      "title": "语音STT",
+      "stack": [
+        "stt",
+        "whisper"
+      ],
+      "keywords": [
+        "伪输入框",
+        "双Whisper"
+      ],
+      "symptoms": [
+        "语音输入问题"
+      ],
+      "whenToRead": "语音输入/STT",
+      "oneLiner": "伪输入框与双 Whisper 入参差异"
+    },
+    {
+      "id": 19,
+      "file": "19_桌面自动化 · 无控件树·自下而上·DPI漂移.md",
+      "title": "桌面自动化",
+      "stack": [
+        "desktop-automation"
+      ],
+      "keywords": [
+        "无控件树",
+        "自下而上",
+        "DPI"
+      ],
+      "symptoms": [
+        "桌面自动化点不中"
+      ],
+      "whenToRead": "桌面自动化/UIA",
+      "oneLiner": "无控件树走自下而上；DPI 缩放导致坐标漂移"
+    },
+    {
+      "id": 20,
+      "file": "20_安卓外壳 · 三份副本·JDK≠语言级别·204是成功.md",
+      "title": "安卓外壳",
+      "stack": [
+        "android",
+        "capacitor"
+      ],
+      "keywords": [
+        "三份副本",
+        "JDK",
+        "204"
+      ],
+      "symptoms": [
+        "安卓壳构建/接口问题"
+      ],
+      "whenToRead": "安卓壳构建",
+      "oneLiner": "三份副本要同步；JDK≠语言级别；204 是成功"
+    },
+    {
+      "id": 21,
+      "file": "21_前端重构 · 先量数字·副本漂移·安全区.md",
+      "title": "前端重构",
+      "stack": [
+        "frontend",
+        "refactor"
+      ],
+      "keywords": [
+        "先量数字",
+        "副本漂移",
+        "安全区"
+      ],
+      "symptoms": [
+        "前端重构走样"
+      ],
+      "whenToRead": "前端重构",
+      "oneLiner": "先量数字再动手；副本会漂移；安全区要留"
+    },
+    {
+      "id": 22,
+      "file": "22_流程质量 · HANDOFF十节·变异测试·棘轮.md",
+      "title": "流程质量",
+      "stack": [
+        "handoff",
+        "quality"
+      ],
+      "keywords": [
+        "HANDOFF十节",
+        "变异测试",
+        "棘轮"
+      ],
+      "symptoms": [
+        "交接质量差",
+        "质量回退"
+      ],
+      "whenToRead": "交接/质量保障",
+      "oneLiner": "HANDOFF 十节 + 变异测试 + 棘轮"
+    },
+    {
+      "id": 23,
+      "file": "23_事故复盘 · 8次看着像A其实是B.md",
+      "title": "事故复盘",
+      "stack": [
+        "postmortem"
+      ],
+      "keywords": [
+        "症状对照表",
+        "看着像A其实是B"
+      ],
+      "symptoms": [
+        "各种诡异事故"
+      ],
+      "whenToRead": "遇到诡异事故",
+      "oneLiner": "8 次「看着像 A 其实是 B」——先做对照实验"
+    },
+    {
+      "id": 24,
+      "file": "24_铁律速查 · 80条（第二批）.md",
+      "title": "铁律速查2",
+      "stack": [
+        "general"
+      ],
+      "keywords": [
+        "铁律",
+        "80条"
+      ],
+      "symptoms": [
+        "随时翻"
+      ],
+      "whenToRead": "随时翻",
+      "oneLiner": "80 条一句话铁律（第二批）"
+    },
+    {
+      "id": 25,
+      "file": "25_Windows静默后台任务 · 闪屏·编码方向·日志策略.md",
+      "title": "Windows静默后台任务",
+      "stack": [
+        "windows",
+        "background"
+      ],
+      "keywords": [
+        "闪屏",
+        "编码方向",
+        "日志策略"
+      ],
+      "symptoms": [
+        "后台任务闪屏/日志乱"
+      ],
+      "whenToRead": "Windows 后台任务",
+      "oneLiner": "闪屏、编码方向、日志策略三件套"
+    },
+    {
+      "id": 26,
+      "file": "26_AI聊天站迭代 · 移动端解锁·通道记忆·纯搬运对账.md",
+      "title": "AI聊天站迭代",
+      "stack": [
+        "ai-chat"
+      ],
+      "keywords": [
+        "移动端解锁",
+        "通道记忆",
+        "纯搬运对账"
+      ],
+      "symptoms": [
+        "聊天站迭代问题"
+      ],
+      "whenToRead": "聊天站迭代",
+      "oneLiner": "移动端解锁、通道记忆、纯搬运对账"
+    },
+    {
+      "id": 27,
+      "file": "27_豆包去水印 · 水印是URL模板不是像素——图片视频双通道研发复盘.md",
+      "title": "豆包去水印",
+      "stack": [
+        "media",
+        "watermark"
+      ],
+      "keywords": [
+        "URL模板",
+        "双通道"
+      ],
+      "symptoms": [
+        "去水印下载失败"
+      ],
+      "whenToRead": "媒体水印处理",
+      "oneLiner": "水印是 URL 模板不是像素——图片视频双通道"
+    },
+    {
+      "id": 28,
+      "file": "28_PDF压缩站 · Ghostscript参数失效就换渲染管线.md",
+      "title": "PDF压缩站",
+      "stack": [
+        "pdf",
+        "ghostscript"
+      ],
+      "keywords": [
+        "gs参数失效",
+        "渲染管线",
+        "pdf.js"
+      ],
+      "symptoms": [
+        "PDF压缩/worker加载"
+      ],
+      "whenToRead": "浏览器端 PDF 处理",
+      "oneLiner": "gs 参数失效就换 pdf.js 渲染管线"
+    },
+    {
+      "id": 29,
+      "file": "29_GitHub访问 · ECS隧道三模式·PAC免管员分流·托盘exe.md",
+      "title": "GitHub访问",
+      "stack": [
+        "git",
+        "tunnel"
+      ],
+      "keywords": [
+        "ECS隧道",
+        "PAC分流",
+        "托盘exe"
+      ],
+      "symptoms": [
+        "push被墙",
+        "打不开GitHub"
+      ],
+      "whenToRead": "GitHub 被墙",
+      "oneLiner": "ECS SSH 中转三模式；上传必死下载偶通是上行干扰"
+    },
+    {
+      "id": 30,
+      "file": "30_Windows打包 · build.files白名单·事件日志会骗人·安装器钩子.md",
+      "title": "Windows打包",
+      "stack": [
+        "electron",
+        "electron-builder",
+        "nsis"
+      ],
+      "keywords": [
+        "build.files",
+        "asar",
+        "EBUSY",
+        "WinError 5",
+        "UAC.dll_unloaded",
+        "无法关闭",
+        "Failed to uninstall"
+      ],
+      "symptoms": [
+        "装完双击没反应",
+        "覆盖安装弹无法关闭",
+        "安装包体积虚高",
+        "asar缺入口"
+      ],
+      "whenToRead": "打包前/覆盖安装前必读",
+      "oneLiner": "build.files 必须白名单（.gitignore 会吃掉 out/）；事件日志的故障模块名会骗人；装到用户可写目录免提权"
+    },
+    {
+      "id": 31,
+      "file": "31_Android真机调试 · scrcpy绕守护·CDP读store·dpr换算.md",
+      "title": "Android真机调试",
+      "stack": [
+        "android",
+        "adb",
+        "scrcpy",
+        "cdp"
+      ],
+      "keywords": [
+        "安全守护",
+        "scrcpy",
+        "CDP",
+        "uiautomator",
+        "dpr",
+        "pinia"
+      ],
+      "symptoms": [
+        "真机装不上卡风险页",
+        "input tap无效",
+        "想知道运行时状态"
+      ],
+      "whenToRead": "真机安装/真机调试前必读",
+      "oneLiner": "首次安装必人工过风险页；scrcpy 可代点；CDP 读 store+getBoundingClientRect×dpr"
+    },
+    {
+      "id": 32,
+      "file": "32_移动端音效 · WebView挂起三道防线·旁路降级不用dispose.md",
+      "title": "移动端音效",
+      "stack": [
+        "android",
+        "web-audio",
+        "capacitor"
+      ],
+      "keywords": [
+        "AudioContext挂起",
+        "createMediaElementSource",
+        "旁路降级",
+        "双版本"
+      ],
+      "symptoms": [
+        "移动端音效息屏失效",
+        "降级方案设计"
+      ],
+      "whenToRead": "移动端 Web Audio 实现前必读",
+      "oneLiner": "AudioContext 会被挂起需三道自愈；降级=增益归零不用 dispose；音效默认关闭+双版本并存"
+    },
+    {
+      "id": 33,
+      "file": "33_Android音效撤回 · 引擎级差异·真机音质A/B·覆盖式回滚.md",
+      "title": "Android音效撤回",
+      "stack": [
+        "android",
+        "web-audio",
+        "release"
+      ],
+      "keywords": [
+        "Android WebView",
+        "Web Audio 平台差异",
+        "DynamicsCompressor makeup",
+        "音质 A/B 对比",
+        "回滚 versionCode 递增"
+      ],
+      "symptoms": [
+        "桌面音效过但移动端音质崩",
+        "回滚版本号怎么定",
+        "Release 撤回怎么标"
+      ],
+      "whenToRead": "移动端 Web Audio 上线后音质异常要撤回时",
+      "oneLiner": "桌面验收通过 ≠ 移动端可用（引擎级 makeup 差异不可调参）；回滚 versionCode 必须递增；Release 撤回用标注不删"
+    },
+    {
+      "id": 34,
+      "file": "34_AI自主修bug · 报bug带截图·证据先于断言·五阶段闭环.md",
+      "title": "AI自主修bug",
+      "stack": [
+        "ai-collab",
+        "debugging",
+        "ai-autonomy"
+      ],
+      "keywords": [
+        "证据先于断言",
+        "待验证命题",
+        "静态复现实验",
+        "打在根因",
+        "报bug模板",
+        "反模式清单"
+      ],
+      "symptoms": [
+        "AI反复修不好一个bug",
+        "只有文字描述没截图",
+        "改完还是坏",
+        "把猜测当根因"
+      ],
+      "whenToRead": "接到 bug、要自主定位/修复，或要给 AI 报 bug 时",
+      "oneLiner": "证据先于断言——有真输入就跑实验量，别在代码里猜；用户回忆当待验证命题，先证伪再排工序"
+    },
+    {
+      "id": 35,
+      "file": "35_评论框定位与串评 · 聚焦光标致模板匹配掉阈值·拿真截图跑实验.md",
+      "title": "评论框定位与串评",
+      "stack": [
+        "windows-desktop",
+        "opencv",
+        "vision-automation"
+      ],
+      "keywords": [
+        "模板匹配掉阈值",
+        "聚焦光标",
+        "TM_CCOEFF_NORMED",
+        "拿真截图跑实验",
+        "旧坐标重锚",
+        "归属校验"
+      ],
+      "symptoms": [
+        "评论框在屏幕顶/底定位不到",
+        "给A的评论发到B",
+        "多个AI反复修不好"
+      ],
+      "whenToRead": "视觉自动化里同一目标有时认得有时认不得、或动作打到错误目标时",
+      "oneLiner": "真因是聚焦光标把模板匹配从1.000拉到0.828(<阈值0.85)，不是位置；破题靠拿真截图跑实验量出来"
+    },
+    {
+      "id": 36,
+      "file": "36_网络映射盘 · Vite解析失灵·D1本地fsync·cmd中文注释.md",
+      "title": "网络映射盘",
+      "stack": [
+        "vite",
+        "cloudflare",
+        "windows"
+      ],
+      "keywords": [
+        "映射盘",
+        "网络盘",
+        "UNC",
+        "Failed to resolve entry",
+        "SQLITE_IOERR_FSYNC",
+        "cmd 中文乱码",
+        "MSYS_NO_PATHCONV",
+        "本地镜像构建"
+      ],
+      "symptoms": [
+        "映射盘上 vite 连自己都解析失败",
+        "wrangler d1 --local 报 SQLite fsync IO 错",
+        "cmd 批处理中文注释解析炸裂",
+        "Git Bash 调 robocopy 参数被转路径"
+      ],
+      "whenToRead": "项目放在映射网络盘/共享目录上做 Vite 构建或 wrangler 本地开发前必读",
+      "oneLiner": "映射网络盘上：构建/本地 D1 走本地镜像目录（realpath 盘符错位 + SQLite fsync 限制），.cmd 纯 ASCII"
+    },
+    {
+      "id": 37,
+      "file": "37_Electron自检被正式版单实例锁挡死 · DBWM_USERDATA测试隔离.md",
+      "title": "Electron测试隔离",
+      "stack": [
+        "electron",
+        "e2e",
+        "nsis"
+      ],
+      "keywords": [
+        "单实例锁",
+        "requestSingleInstanceLock",
+        "userData",
+        "e2e秒退",
+        "托盘常驻",
+        "app.setPath",
+        "MSYS路径转换",
+        "NSIS静默安装"
+      ],
+      "symptoms": [
+        "e2e 自检全部断言超时且日志节选为空",
+        "应用启动即退无任何日志",
+        "Git Bash 里 /S 静默安装弹交互窗口"
+      ],
+      "whenToRead": "桌面应用 e2e/自动化在真机上跑不通、或 Git Bash 调原生安装器开关失效时",
+      "oneLiner": "开发实例与托盘常驻的正式版共用 userData 被单实例锁挡掉秒退——测试进程必须在 requestSingleInstanceLock 之前 app.setPath('userData', 独立目录); Git Bash 的 /S 会被 MSYS 路径转换吃掉"
+    },
+    {
+      "id": 38,
+      "file": "38_即梦无水印与配额红蓝对抗 · delogo动态水印·信任边界.md",
+      "title": "即梦无水印与配额红蓝对抗",
+      "stack": [
+        "python",
+        "ffmpeg",
+        "web-security"
+      ],
+      "keywords": [
+        "即梦",
+        "jimeng",
+        "无水印",
+        "水印",
+        "delogo",
+        "动态水印",
+        "anytocopy",
+        "dy-download",
+        "配额",
+        "quota",
+        "限流",
+        "防刷",
+        "信任边界",
+        "x-fp",
+        "debug参数",
+        "红蓝对抗",
+        "landing_page",
+        "get_item_info",
+        "365yg"
+      ],
+      "symptoms": [
+        "分享链接下载的全是带水印视频",
+        "改CDN参数去不掉水印",
+        "水印会动换位置",
+        "每日免费次数被绕过",
+        "限流被刷",
+        "调试功能被滥用"
+      ],
+      "whenToRead": "做视频平台无水印解析、或设计配额/限流/防刷方案时",
+      "oneLiner": "水印烧在文件里改URL没用（动态水印用delogo按时间区段圈）；客户端可控的头和URL参数都不能当配额信任锚"
+    },
+    {
+      "id": 39,
+      "file": "39_伪装头对齐与发版兜底 · asar解包·Actions秒挂·隧道push.md",
+      "title": "伪装头对齐与发版兜底",
+      "stack": [
+        "rust",
+        "electron",
+        "github-actions",
+        "powershell"
+      ],
+      "keywords": [
+        "asar",
+        "electron",
+        "伪装",
+        "masquerade",
+        "User-Agent",
+        "X-IDE-Version",
+        "版本常量",
+        "app.asar",
+        "grep -aoE",
+        "Actions秒挂",
+        "0 step",
+        "billing",
+        "spending limit",
+        "recent account payments",
+        "Object does not exist",
+        "422",
+        "gh api",
+        "refs",
+        "ECS隧道",
+        "curloptResolve",
+        "本地打包兜底",
+        "NSIS",
+        "gh release create",
+        "API直传",
+        "api_push",
+        "blob",
+        "tree",
+        "refs",
+        "零分叉",
+        "Reference already exists"
+      ],
+      "symptoms": [
+        "伪装版本号过期不知道去哪拿新值",
+        "上游可能开始校验身份头",
+        "CI 3-4秒失败0个step",
+        "job没有steps直接failure",
+        "gh api改ref报Object does not exist",
+        "git push连不上要发tag"
+      ],
+      "whenToRead": "改伪装/版本常量、CI秒挂排查、git被墙要推代码或tag时",
+      "oneLiner": "伪装身份以真机解包为准（exe FileVersion+CLI package.json+grep asar），别抄仓库常量；CI秒挂=账单封锁（steps=0+annotation），本地NSIS+gh release create兜底；隧道也挂时API对象直传push（scripts/api_push.py：message无结尾换行、复刻本地原始ident行、gh api无-R）"
+    }
+  ]
 }
