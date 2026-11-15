@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-15",
-  "total": 40,
+  "updated": "2026-11-16",
+  "total": 41,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -929,6 +929,56 @@
       ],
       "whenToRead": "给本地网关上 frp 公网隧道；frps 已被占用要加新隧道；二改开源项目动代码前；frp 相关自动化测试不能干扰线上会话",
       "oneLiner": "复用存量 frps（TCP 代理占 allowPorts 内 808x）+ Caddy 按域名反代，零新增入站端口；管理面在 Caddy 边缘按路径屏蔽；二改项目先空数据冷启动跑一遍（TDZ/空引用都在没覆盖过的分支里）；测试 frpc 必换代理名防互踢"
+    },
+    {
+      "id": 41,
+      "file": "41_单文件安装包打包 · bat编码裂行·转义吃字符·NSIS树杀.md",
+      "title": "单文件安装包打包",
+      "stack": [
+        "nsis",
+        "iexpress",
+        "bat",
+        "python",
+        "pyinstaller",
+        "frp",
+        "windows"
+      ],
+      "keywords": [
+        "NSIS",
+        "makensis",
+        "IExpress",
+        "/Q",
+        "QuietInstCmd",
+        "bat CRLF",
+        "bat UTF-8 裂行",
+        "语句未结束",
+        "GBK 编码",
+        "python 转义",
+        "chr(12)",
+        "换页符",
+        "frprpc",
+        "start /min",
+        "cmd /c start 分离",
+        "进程树",
+        "NSIS 退出带子进程",
+        "PyInstaller onefile",
+        "冻结态",
+        "ROOT_DIR",
+        "_MEI",
+        "ZCODE_DATA_DIR",
+        "7z a -tzip",
+        "长路径"
+      ],
+      "symptoms": [
+        "工具生成的 bat 括号块解析裂行/中文行被当命令",
+        "静默安装什么都没装",
+        "生成脚本里文件名被吃掉一截（frprpc）",
+        "NSIS /S 装完进程全没",
+        "PyInstaller exe 换目录启动崩 app\\statics does not exist",
+        "后端进程活着但不监听端口"
+      ],
+      "whenToRead": "做单文件安装包（NSIS/IExpress）；工具生成 bat/py 脚本；PyInstaller 后端换目录部署；安装器要拉起常驻服务",
+      "oneLiner": "bat 必须 CRLF（中文用 GBK 去掉 chcp）；程序生成脚本后断言无 chr(12) 控制字符；NSIS 启动常驻服务用 cmd /c start 分离进程树；IExpress 静默须配 QuietInstCmd 且无 pause；PyInstaller 冻结态三环境变量指路"
     }
   ]
 }

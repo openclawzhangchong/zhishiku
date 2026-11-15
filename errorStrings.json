@@ -195,5 +195,23 @@
       29,
       40
     ]
+  },
+  {
+    "pattern": "语句未结束",
+    "docs": [
+      41
+    ]
+  },
+  {
+    "pattern": "frprpc.exe",
+    "docs": [
+      41
+    ]
+  },
+  {
+    "pattern": "app\\statics' does not exist",
+    "docs": [
+      41
+    ]
   }
 ]
