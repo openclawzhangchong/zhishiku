@@ -249,5 +249,18 @@
     "docs": [
       43
     ]
+  },
+  {
+    "pattern": "state() called before manage()",
+    "docs": [
+      42
+    ]
+  },
+  {
+    "pattern": "Git Repository is empty",
+    "docs": [
+      41,
+      42
+    ]
   }
 ]
