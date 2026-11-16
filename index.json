@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-11-16",
-  "total": 42,
+  "total": 43,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -1022,6 +1022,43 @@
       ],
       "whenToRead": "处理 Electron 客户端凭据存储、做 API 反代/伪装、或同一产品多渠道参数配置时",
       "oneLiner": "$wbEncrypted 信封用运行时密钥加密、密钥不落盘→解不开别硬解，走产品自家 OAuth 拿明文并把加密账号踢出出站池；国内/国际版是独立发行物（5.11.3 vs 5.9.4，差十几版本），伪装参数（版本/UA/头/模型）必须按渠道分离，取值各自解包安装目录"
+    },
+    {
+      "id": 43,
+      "file": "43_Tauri NSIS安装器美化 · 真图标·全中文·自定义欢迎页.md",
+      "title": "Tauri NSIS 安装器美化",
+      "stack": [
+        "tauri",
+        "nsis",
+        "python",
+        "pil"
+      ],
+      "keywords": [
+        "tauri",
+        "nsis",
+        "installer",
+        "installerIcon",
+        "sidebarImage",
+        "headerImage",
+        "MUI",
+        "SimpChinese",
+        "customLanguageFiles",
+        "template",
+        "MUI_WELCOMEPAGE_TITLE",
+        "BOM",
+        "多尺寸ico",
+        "中文安装包"
+      ],
+      "symptoms": [
+        "安装包图标是NSIS地球",
+        "安装界面全英文",
+        "安装界面丑",
+        "欢迎页标题折行",
+        "语言包报include error on line 1",
+        "unterminated string parsing"
+      ],
+      "whenToRead": "定制 Tauri/NSIS 安装器外观、换图标、改语言、改欢迎页文案时",
+      "oneLiner": "Tauri 安装器全能配：installerIcon(多尺寸ico)+sidebarImage(164x314 BMP)+headerImage(150x57 BMP) 换素材、languages+customLanguageFiles 换中文、template 覆盖欢迎页文案；三个坑=语言包不能带BOM、$\r$\n 必须 raw 字符串写、template 改动越小越好"
     }
   ]
 }

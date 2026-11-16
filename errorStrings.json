@@ -237,5 +237,17 @@
     "docs": [
       42
     ]
+  },
+  {
+    "pattern": "unterminated string parsing",
+    "docs": [
+      43
+    ]
+  },
+  {
+    "pattern": "aborting creation process",
+    "docs": [
+      43
+    ]
   }
 ]
