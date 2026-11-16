@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-11-16",
-  "total": 41,
+  "total": 42,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -979,6 +979,49 @@
       ],
       "whenToRead": "做单文件安装包（NSIS/IExpress）；工具生成 bat/py 脚本；PyInstaller 后端换目录部署；安装器要拉起常驻服务",
       "oneLiner": "bat 必须 CRLF（中文用 GBK 去掉 chcp）；程序生成脚本后断言无 chr(12) 控制字符；NSIS 启动常驻服务用 cmd /c start 分离进程树；IExpress 静默须配 QuietInstCmd 且无 pause；PyInstaller 冻结态三环境变量指路"
+    },
+    {
+      "id": 42,
+      "file": "42_Electron加密凭据与多渠道伪装 · envelope解不开·版本号按渠道分离.md",
+      "title": "Electron加密凭据与多渠道伪装",
+      "stack": [
+        "electron",
+        "rust",
+        "crypto",
+        "oauth"
+      ],
+      "keywords": [
+        "wbEncrypted",
+        "envelope",
+        "加密凭据",
+        "safeStorage",
+        "DPAPI",
+        "AES-256-GCM",
+        "HKDF",
+        "keyblob",
+        "static-v1",
+        "at-rest",
+        "反代503",
+        "11128",
+        "11102",
+        "11158",
+        "first message is not system prompt",
+        "伪装",
+        "User-Agent",
+        "版本分离",
+        "app.asar",
+        "OAuth取明文"
+      ],
+      "symptoms": [
+        "账号显示已登录但反代出站失败",
+        "凭据为加密存储仅支持切换账号",
+        "access_token是对象不是字符串",
+        "国际版打不通",
+        "同一产品两档版本号不同",
+        "模型列表接口404"
+      ],
+      "whenToRead": "处理 Electron 客户端凭据存储、做 API 反代/伪装、或同一产品多渠道参数配置时",
+      "oneLiner": "$wbEncrypted 信封用运行时密钥加密、密钥不落盘→解不开别硬解，走产品自家 OAuth 拿明文并把加密账号踢出出站池；国内/国际版是独立发行物（5.11.3 vs 5.9.4，差十几版本），伪装参数（版本/UA/头/模型）必须按渠道分离，取值各自解包安装目录"
     }
   ]
 }

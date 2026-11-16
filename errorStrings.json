@@ -213,5 +213,29 @@
     "docs": [
       41
     ]
+  },
+  {
+    "pattern": "envelope",
+    "docs": [
+      42
+    ]
+  },
+  {
+    "pattern": "$wbEncrypted",
+    "docs": [
+      42
+    ]
+  },
+  {
+    "pattern": "first message is not system prompt",
+    "docs": [
+      42
+    ]
+  },
+  {
+    "pattern": "model service info not found",
+    "docs": [
+      42
+    ]
   }
 ]
