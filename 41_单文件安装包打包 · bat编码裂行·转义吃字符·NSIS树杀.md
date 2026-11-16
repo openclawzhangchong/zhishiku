@@ -72,3 +72,44 @@
 - 本机大文件 zip 用 7z（`7z a -tzip`），长路径稳；单文件安装 exe 用 makensis（Tauri 自带 NSIS 可复用）
 
 > 关联：`40_frp复用上线公网隧道`、`29_GitHub访问`（API 直传 push）。
+
+
+---
+
+## 补充实测（2026-11-16 打包当日追加，同一交付中发现）
+
+### 补1：tasklist //FI 经 Git Bash 间歇失效 → 误判「进程死了」
+
+| 项 | 内容 |
+|---|---|
+| **症状** | tasklist //FI "IMAGENAME eq xxx.exe" 时而正常时而返回「没有运行的任务」，服务明明活着（公网 200 实证） |
+| **根因** | MSYS 对 //FI 参数的转换/传递间歇异常 |
+| **修复** | 进程存在性检查改用 powershell Get-Process 或 netstat -ano 交叉验证 |
+| **可复用教训** | Git Bash 下 tasklist //FI 的否定结论不可信，必须用 PowerShell/netstat 复核后再下判断 |
+
+### 补2：PyInstaller --noconsole exe 在隐藏窗口启动会卡死（不监听端口）
+
+| 项 | 内容 |
+|---|---|
+| **症状** | --noconsole 打包的后端 exe：前台/CREATE_NO_WINDOW+DEVNULL 启动 2 秒即监听；但 vbs 隐藏启动（无重定向）进程活着却永远不 bind 端口 |
+| **根因** | --noconsole 应用 stdout 无效；uvicorn 日志写 stdout 在某些句柄形态下卡死启动流程 |
+| **修复** | 隐藏启动必须重定向 stdout：cmd /c "exe" >> "log" 2>&1（文件句柄有效）或 python Popen DEVNULL |
+| **可复用教训** | --noconsole 后端做无窗口自启时，stdout 必须显式重定向到文件，不能裸启动 |
+
+### 补3：Git Bash 里 >nul 会创建名为 nul 的真实文件，卡死 git add
+
+| 项 | 内容 |
+|---|---|
+| **症状** | git add -A 报 error: unable to index file 'nul'，提交失败 |
+| **根因** | bash 下 >nul 不走 Windows NUL 设备，而是创建保留名文件 nul；git 无法索引 |
+| **修复** | 删除用 rm "//?/<绝对路径>/nul" 或 PowerShell Remove-Item -LiteralPath "\\?\...nul"；bash 里重定向一律用 /dev/null |
+| **可复用教训** | Windows 保留名文件（nul/con）用 \\?\ 前缀删；在 Git Bash 里永远写 /dev/null 不写 nul |
+
+### 补4：build.bat 的 move /y 在 Git Bash 不存在 → 拷贝到安装包的是旧产物
+
+| 项 | 内容 |
+|---|---|
+| **症状** | 重编后端后安装包里仍是旧版本（新 exe 尺寸 28296341 ≠ 安装的 28296028） |
+| **根因** | build.bat 用 move /y（Windows 命令），Git Bash 无 move → 改名步骤静默失败，后续拷贝的是旧文件 |
+| **修复** | bash 下用 mv；或整条构建链都从 cmd 跑；交付前核对产物尺寸/mtime |
+| **可复用教训** | bat 里的 Windows 专属命令（move/del nul）不能在 Git Bash 直接复跑，逐条翻译成 bash 等价物 |
