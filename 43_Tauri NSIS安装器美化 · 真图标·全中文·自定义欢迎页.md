@@ -86,4 +86,29 @@
 }
 ```
 
+
+
+### 补充（2026-11-16 晚）：中文化漏网的终极排查法 —— 做差集
+
+只改了 `languages=["SimpChinese"]` + 写 20 条 LangString 后，逐页截图发现**安装进度页
+（WebView2 下载/安装提示）和卸载确认页（删除应用数据复选框）仍是英文**。
+原因是 Tauri 模板实际引用 **24** 个 `$(xxx)` 字符串，我之前只覆盖了 20 个。
+
+别靠肉眼一页页猜，直接做集合差集（一次找全）：
+
+```python
+import re
+nsi  = open('target/release/nsis/x64/installer.nsi',encoding='utf-8',errors='replace').read()
+lang = open('target/release/nsis/x64/SimpChinese.nsh',encoding='utf-8',errors='replace').read()
+refs = set(re.findall(r'\$\(([A-Za-z0-9_]+)', nsi))          # 模板引用
+defs = set(re.findall(r'LangString\s+([A-Za-z0-9_]+)', lang))    # 语言包定义
+print('缺失:', sorted(refs - defs))   # ← 这些会显示英文，逐个补中文
+```
+
+补齐后重新打包，**必须重建语言包后再做一次差集**（用 `target/release/nsis/x64/` 下
+生成的副本，不是源文件），确认缺失为 0 才发版。
+
+**可复用教训**：任何"国际化没做全"的问题，先做「引用集合 − 已翻译集合」的差集，
+比逐页截图找快且不会漏；截图只用于最后验收 UI 观感。
+
 > 关联：`41_单文件安装包打包 · bat编码裂行·转义吃字符·NSIS树杀`（同属 NSIS 打包家族，那篇讲的是自建 NSIS + IExpress）。
