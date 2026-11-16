@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-16",
-  "total": 43,
+  "updated": "2026-11-17",
+  "total": 44,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -1059,6 +1059,43 @@
       ],
       "whenToRead": "定制 Tauri/NSIS 安装器外观、换图标、改语言、改欢迎页文案时",
       "oneLiner": "Tauri 安装器全能配：installerIcon(多尺寸ico)+sidebarImage(164x314 BMP)+headerImage(150x57 BMP) 换素材、languages+customLanguageFiles 换中文、template 覆盖欢迎页文案；三个坑=语言包不能带BOM、$\r$\n 必须 raw 字符串写、template 改动越小越好"
+    },
+    {
+      "id": 44,
+      "file": "44_OMR判卷引擎移植 · OpenCV五坑·基线先行·灰度穿越读条码.md",
+      "title": "OMR 判卷引擎移植",
+      "stack": [
+        "opencv-to-js",
+        "omr",
+        "image-processing",
+        "single-file-html",
+        "web-worker",
+        "code128"
+      ],
+      "keywords": [
+        "悬垂else",
+        "TypedArray越界",
+        "逐行前缀和",
+        "上采样用错变量",
+        "charCode-32方向",
+        "灰度50%穿越",
+        "亚像素边缘",
+        "尺度搜索",
+        "合成数据真实性",
+        "基线先行",
+        "PGM跨语言",
+        "答题卡判卷"
+      ],
+      "symptoms": [
+        "图像算法结果诡异但不像崩溃",
+        "判卷整列误读",
+        "条码死活解不出",
+        "合成测试过真机挂",
+        "移植算法对不上原版",
+        "盘内求和数值爆炸"
+      ],
+      "whenToRead": "把 OpenCV/Python 图像算法移植到 JS、做 OMR/条码/刻度读数、写合成测试数据、跨语言测试链时",
+      "oneLiner": "基线先行+逐条对应——原版先对真机照片跑出对账基线再动手；合并分支带花括号、盘内求和用逐行前缀和、读条码用灰度50%穿越、合成数据按真实物理灰阶造"
     }
   ]
 }

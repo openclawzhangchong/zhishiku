@@ -4,10 +4,10 @@
 >
 > 不是原则，不是鸡汤。每一条背后都是一次真实事故、一次返工、一次交付。
 
-![文档数](https://img.shields.io/badge/文档-33%20篇-blue)
+![文档数](https://img.shields.io/badge/文档-44%20篇-blue)
 ![体量](https://img.shields.io/badge/体量-约%2016%20万字-brightgreen)
 ![来源项目](https://img.shields.io/badge/来源项目-47%20个-orange)
-![批次](https://img.shields.io/badge/批次-6%20批-blueviolet)
+![批次](https://img.shields.io/badge/批次-10%20批-blueviolet)
 ![协议](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
@@ -94,6 +94,7 @@
 | 31 | [`31_Android真机调试 · scrcpy绕守护·CDP读store·dpr换算.md`](31_Android%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%20%C2%B7%20scrcpy%E7%BB%95%E5%AE%88%E6%8A%A4%C2%B7CDP%E8%AF%BBstore%C2%B7dpr%E6%8D%A2%E7%AE%97.md) | 真机装不上（安全守护风险页）、tap 点不中、想知道运行时状态 | 首次安装必人工过风险页；scrcpy 投屏可代点；CDP 读 pinia store + getBoundingClientRect×dpr |
 | 32 | [`32_移动端音效 · WebView挂起三道防线·旁路降级不用dispose.md`](32_%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%9F%B3%E6%95%88%20%C2%B7%20WebView%E6%8C%82%E8%B5%B7%E4%B8%89%E9%81%93%E9%98%B2%E7%BA%BF%C2%B7%E6%97%81%E8%B7%AF%E9%99%8D%E7%BA%A7%E4%B8%8D%E7%94%A8dispose.md) | 把 Web Audio 搬进 Android WebView、音效息屏失效、降级方案设计 | AudioContext 会被挂起需三道自愈；createMediaElementSource 只能调一次，降级=增益归零不用 dispose；音效默认关闭+双版本并存 |
 | 33 | [`33_Android音效撤回 · 引擎级差异·真机音质A/B·覆盖式回滚.md`](33_Android%E9%9F%B3%E6%95%88%E6%92%A4%E5%9B%9E%20%C2%B7%20%E5%BC%95%E6%93%8E%E7%BA%A7%E5%B7%AE%E5%BC%82%C2%B7%E7%9C%9F%E6%9C%BA%E9%9F%B3%E8%B4%A8A%2FB%C2%B7%E8%A6%86%E7%9B%96%E5%BC%8F%E5%9B%9E%E6%BB%9A.md) | 移动端音效上线后又撤回、回滚版本号怎么定、Release 撤回怎么标 | **桌面验收通过 ≠ 移动端可用**（Web Audio 引擎级平台差异：Android WebView 无 compressor 自动 makeup）；回滚包 versionCode 必须递增；Release 撤回用标注不删 |
+| 44 | [`44_OMR判卷引擎移植 · OpenCV五坑·基线先行·灰度穿越读条码.md`](44_OMR%E5%88%A4%E5%8D%B7%E5%BC%95%E6%93%8E%E7%A7%BB%E6%A4%8D%20%C2%B7%20OpenCV%E4%BA%94%E5%9D%91%C2%B7%E5%9F%BA%E7%BA%BF%E5%85%88%E8%A1%8C%C2%B7%E7%81%B0%E5%BA%A6%E7%A9%BF%E8%B6%8A%E8%AF%BB%E6%9D%A1%E7%A0%81.md) | 移植 OpenCV/Python 图像算法到 JS、做 OMR/条码/刻度读数、写合成测试数据时 | 基线先行+逐条对应；五坑实录；读条码用灰度 50% 穿越；合成数据按真实灰阶造 |
 
 
 ---
@@ -140,6 +141,14 @@
 | 文字 PDF 被压成图片 | 28 坑 6（`getPage()` 漏 await） |
 | 自动化 upload 后页面变 about:blank | 28 坑 11/12（用 CDP `DOM.setFileInputFiles`） |
 | 空仓库 `409 Git Repository is empty` | 28 坑 14（先做一次初始提交） |
+
+### 第十批症状补充（图像算法移植 / OMR / 条码）
+
+| 症状 | 去哪看 |
+|---|---|
+| 图像算法移植后结果"微妙地错" | 44 五坑表 |
+| 条码/细条纹读不出 | 44 第三节（灰度 50% 穿越） |
+| 合成测试过、真机挂 | 44 第四节（合成数据按真实灰阶） |
 
 ### 第二批症状补充
 
