@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-11-17",
-  "total": 44,
+  "updated": "2026-11-21",
+  "total": 45,
   "usage": "AI 检索方法：① 按 symptoms/keywords/errorCode 匹配 → 读对应 file 的「可复用教训」（搜该行）→ 需要细节再读全文。② 打包/发版/真机安装/git push 前必读 whenToRead 匹配的文档。③ 报错串（如 EBUSY/WinError 5/Connection was reset）直接当关键词查。",
   "docs": [
     {
@@ -1096,6 +1096,42 @@
       ],
       "whenToRead": "把 OpenCV/Python 图像算法移植到 JS、做 OMR/条码/刻度读数、写合成测试数据、跨语言测试链时",
       "oneLiner": "基线先行+逐条对应——原版先对真机照片跑出对账基线再动手；合并分支带花括号、盘内求和用逐行前缀和、读条码用灰度50%穿越、合成数据按真实物理灰阶造"
+    },
+    {
+      "id": 45,
+      "file": "45_设备令牌不破解也拿到 · 图灵盾原生模块·asar提取·激励归因.md",
+      "title": "设备令牌不破解也拿到",
+      "stack": [
+        "electron",
+        "node",
+        "rust",
+        "crypto",
+        "python"
+      ],
+      "keywords": [
+        "TuringShield",
+        "turing_sdk",
+        "X-Device-Token",
+        "设备令牌",
+        "qimei36",
+        "channelId",
+        "N-API",
+        "asar提取",
+        "激励归因",
+        "每日积分",
+        "daily-checkin",
+        "sidecar",
+        "图灵盾",
+        "400111"
+      ],
+      "symptoms": [
+        "客户端有每日积分反代拿不到",
+        "接口要求设备证明",
+        "X-Device-Token 从哪来",
+        "asar里的模块怎么提取"
+      ],
+      "whenToRead": "遇到设备令牌/设备证明类接口、需要把外部流量归因为官方客户端设备时",
+      "oneLiner": "设备证明SDK别逆向算法——官方把原生模块+渠道号+JS调用序列留在安装目录，node加载官方模块按官方序列调用就是合法令牌；集成回服务用node sidecar+后台刷新（5分钟缓存），永不阻塞出站"
     }
   ]
 }
